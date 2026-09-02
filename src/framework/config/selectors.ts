@@ -1,0 +1,25 @@
+export const CBS_SELECTORS = {
+  HAMBURGER:        'a.item-nav',
+  PENDING_TABLE:    '#dt-pendingdata',
+  AUTH_TABLE:       '#dt-authdata',
+  REJECTED_TABLE:   '#dt-rejecteddata',
+  TAB_PENDING:      '#PendingList',
+  TAB_AUTHORIZED:   '#AuthorizedList',
+  TAB_REJECTED:     '#RejectedList',
+  PENDING_ROWS:     '#dt-pendingdata tbody tr',
+  AUTH_BTN_IN_ROW:  '.authorization-btns a',
+  EDIT_BTN_IN_ROW:  'a.dt-quickedit, a.btn-edit, .edit-btn, a[title="Edit"]',
+  SEARCH_INPUT:     '#searchInput, input[type="search"], .dataTables_filter input',
+  ADD_BTN:          'button.add, #addButton, a.button.add',
+  SAVE_BTN:         'button#saveCustomer, a.button.sm.btn-save, #btnSave',
+  CONFIRM_SAVE_BTN: '#submitForm',
+  APPROVE_BTN:      '#idApprove',
+  CONFIRM_APPROVE:  '#btnApproveId',
+  REJECT_BTN:       '#idReject',
+  CONFIRM_REJECT:   '#btnRejectId',
+  REJECT_REMARK:    '#rejectRemark, #remarkId',
+  TOAST_SUCCESS:    '.toast-messages .msg-toast.msg-success em',
+  TOAST_ERROR:      '.toast-messages .msg-toast.msg-error em',
+} as const;
+
+export type CbsTab = 'pending' | 'authorized' | 'rejected';

@@ -1,0 +1,103 @@
+Using the test cases already generated for this module, do NOT create any new test cases.
+
+Convert all existing test cases into an Excel-ready structure.
+
+Requirements:
+
+1. Preserve all existing TC IDs exactly as generated.
+2. Preserve all test case details without modification.
+3. Group test cases screen-wise in separate Excel sheets.
+
+Create the following sheets:
+
+Sheet 1: Dashboard
+Include:
+- Total Test Cases
+- Positive
+- Negative
+- Validation
+- Boundary
+- UI
+- Functional
+- Navigation
+- Role-Permission
+- High Priority
+- Medium Priority
+- Low Priority
+- Automation Candidates
+
+Sheet 2: List View
+TC-CUST-001 to TC-CUST-036
+
+Sheet 3: Basic Details
+TC-CUST-037 to TC-CUST-065
+
+Sheet 4: Contact Details
+TC-CUST-066 to TC-CUST-088
+
+Sheet 5: Additional Details
+TC-CUST-089 to TC-CUST-107
+
+Sheet 6: Document Details
+TC-CUST-108 to TC-CUST-137
+
+Sheet 7: Maker Checker Workflow
+TC-CUST-138 to TC-CUST-160
+
+Sheet 8: Roles and Permissions
+TC-CUST-161 to TC-CUST-167
+
+Sheet 9: UI Accessibility Boundary E2E
+TC-CUST-168 to TC-CUST-300
+
+For each sheet create columns:
+
+TC ID
+Screen
+Feature/Element
+Test Scenario
+Precondition
+Test Steps
+Test Data
+Expected Result
+Test Type
+Priority
+Automation Candidate
+Automation Tag
+Status
+Remarks
+
+Sheet 10: Automation Mapping
+
+Columns:
+TC ID
+Spec File
+Page Object
+Reusable Component
+Smoke
+Sanity
+Regression
+Automation Status
+
+Sheet 11: Reusable Components
+
+Columns:
+Component Name
+Screens Used
+Reusable Methods
+Future Reuse Candidate
+
+Sheet 12: Execution Tracker
+
+Columns:
+TC ID
+Execution Date
+Executed By
+Status
+Defect ID
+Comments
+
+Output in Excel-ready tabular format only.
+Do not create new test cases.
+Do not renumber test cases.
+Do not change existing test case content.

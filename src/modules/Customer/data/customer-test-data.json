@@ -1,0 +1,127 @@
+{
+  "smoke": {
+    "customerCategory": "1",
+    "memberFName": "SmokeTest",
+    "memberLName": "Retail",
+    "memberDOB": "01-01-1990",
+    "memberGender": "1",
+    "mbrMaritalStatus": "1",
+    "nationality": "India",
+    "residentialStatus": "1",
+    "residentYn": "Y",
+    "address1": "123 Smoke Street",
+    "countryCode": "1",
+    "stateCode": "1",
+    "districtCode": "1",
+    "pinCode": "400001",
+    "mobileNo1": "9876543210",
+    "emailId": "smoke@example.com",
+    "KYCAvailableYn": "Y",
+    "occupation": "1",
+    "proofType": "2",
+    "docType": "1",
+    "idNumber": "SMOKE001TEST",
+    "issuedByCountry": "1",
+    "nameAsInDocument": "SmokeTest Retail"
+  },
+  "regression_create": {
+    "customerCategory": "1",
+    "memberFName": "RegressionCreate",
+    "memberLName": "Customer",
+    "memberDOB": "15-06-1985",
+    "memberGender": "1",
+    "mbrMaritalStatus": "2",
+    "nationality": "India",
+    "residentialStatus": "1",
+    "residentYn": "Y",
+    "pan": "ABCDE1234F",
+    "address1": "456 Regression Lane",
+    "address2": "Block B",
+    "countryCode": "1",
+    "stateCode": "1",
+    "districtCode": "1",
+    "pinCode": "400002",
+    "mobileNo1": "9123456780",
+    "emailId": "regression@example.com",
+    "KYCAvailableYn": "Y",
+    "occupation": "2",
+    "occupationType": "1",
+    "proofType": "2",
+    "docType": "1",
+    "idNumber": "REG001CUST",
+    "issuedByCountry": "1",
+    "nameAsInDocument": "RegressionCreate Customer"
+  },
+  "regression_update": {
+    "mobileNo1": "9000000001",
+    "emailId": "updated@example.com",
+    "address1": "789 Updated Road"
+  },
+  "boundary_min_name": {
+    "customerCategory": "1",
+    "memberFName": "A",
+    "memberLName": "B",
+    "memberDOB": "01-01-1990",
+    "proofType": "2",
+    "idNumber": "MINNAME001",
+    "issuedByCountry": "1"
+  },
+  "boundary_max_name": {
+    "customerCategory": "1",
+    "memberFName": "AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDDEEEEEEEEEE",
+    "memberLName": "ZZZZZZZZZZYYYYYYYYYYYYXXXXXXXXXXXXWWWWWWWWWWVVVVVV",
+    "memberDOB": "01-01-1990",
+    "proofType": "2",
+    "idNumber": "MAXNAME001",
+    "issuedByCountry": "1"
+  },
+  "boundary_exact_adult": {
+    "customerCategory": "1",
+    "memberFName": "ExactAdult",
+    "memberLName": "Test",
+    "memberDOB": "__EXACT_18__",
+    "proofType": "2",
+    "idNumber": "ADULT001",
+    "issuedByCountry": "1"
+  },
+  "negative_empty_firstname": {
+    "customerCategory": "1",
+    "memberFName": "",
+    "memberLName": "NegTest",
+    "memberDOB": "01-01-1990",
+    "proofType": "2",
+    "idNumber": "NEG001"
+  },
+  "negative_empty_lastname": {
+    "customerCategory": "1",
+    "memberFName": "NegTest",
+    "memberLName": "",
+    "memberDOB": "01-01-1990",
+    "proofType": "2",
+    "idNumber": "NEG002"
+  },
+  "negative_future_dob": {
+    "customerCategory": "1",
+    "memberFName": "FutureDOB",
+    "memberLName": "Test",
+    "memberDOB": "01-01-2099",
+    "proofType": "2",
+    "idNumber": "NEG003"
+  },
+  "negative_no_document": {
+    "customerCategory": "1",
+    "memberFName": "NoDoc",
+    "memberLName": "Test",
+    "memberDOB": "01-01-1990"
+  },
+  "reject_workflow": {
+    "customerCategory": "1",
+    "memberFName": "RejectTest",
+    "memberLName": "Workflow",
+    "memberDOB": "01-01-1988",
+    "proofType": "2",
+    "idNumber": "REJECT001",
+    "issuedByCountry": "1",
+    "nameAsInDocument": "RejectTest Workflow"
+  }
+}

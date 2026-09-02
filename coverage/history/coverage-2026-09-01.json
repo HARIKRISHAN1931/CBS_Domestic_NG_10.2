@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-01",
+  "overallCoverage": 49,
+  "totalModules": 20,
+  "totalTests": 57,
+  "totalScreens": 38,
+  "automatedScreens": 17,
+  "byModule": {
+    "Administration": 12,
+    "CASA": 85,
+    "CCOD": 50,
+    "Clearing": 50,
+    "Customer": 22,
+    "FixedAssets": 50,
+    "GL": 0,
+    "GoldLoan": 50,
+    "KCC": 50,
+    "Loans": 85,
+    "Locker": 60,
+    "NACH": 60,
+    "NEFT": 75,
+    "Pigmy": 50,
+    "Processes": 25,
+    "Reports": 30,
+    "RTGS": 85,
+    "Shares": 50,
+    "TD": 85,
+    "Transaction": 0
+  }
+}

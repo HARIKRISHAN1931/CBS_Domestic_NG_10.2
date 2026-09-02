@@ -1,0 +1,1812 @@
+{
+  "CUSTOMER": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CUSTOMER"
+  },
+  "CORPCUSTOMER": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CORPCUSTOMER"
+  },
+  "CUSTFAMILYDETAILS": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CUSTFAMILYDETAILS"
+  },
+  "CUST360": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CUST360"
+  },
+  "DECEASEDCLAIM": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "DECEASEDCLAIM"
+  },
+  "BLACKLISTINGOFCUSTOMERS": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "BLACKLISTINGOFCUSTOMERS"
+  },
+  "CUSTLIMITMASTER": {
+    "top": "Masters",
+    "sub": "customerLimitMgmt",
+    "item": "CUSTLIMITMASTER"
+  },
+  "CUSTLIMITSETUP": {
+    "top": "Masters",
+    "sub": "customerLimitMgmt",
+    "item": "CUSTLIMITSETUP"
+  },
+  "PRDACNOMST": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "PRDACNOMST"
+  },
+  "PRDACNOMSTINTERNAL": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "PRDACNOMSTINTERNAL"
+  },
+  "ACCOUNTSTATEMENT": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "ACCOUNTSTATEMENT"
+  },
+  "BALANCEVIEW": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "BALANCEVIEW"
+  },
+  "POWEROFATTORNEYMST": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "POWEROFATTORNEYMST"
+  },
+  "OLDACCOUNTSEARCH": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "OLDACCOUNTSEARCH"
+  },
+  "SignatureMandate": {
+    "top": "Masters",
+    "sub": "photoandsign",
+    "item": "SignatureMandate"
+  },
+  "PhotoAndSignAuthorization": {
+    "top": "Masters",
+    "sub": "photoandsign",
+    "item": "PhotoAndSignAuthorization"
+  },
+  "INSTRUMENTACCOUNT": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "INSTRUMENTACCOUNT"
+  },
+  "STOPPAY": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "STOPPAY"
+  },
+  "REVOKEINSTRUMENT": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "REVOKEINSTRUMENT"
+  },
+  "FATEOFCHEQUE": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "FATEOFCHEQUE"
+  },
+  "POSITIVEPAYMST": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "POSITIVEPAYMST"
+  },
+  "TERMDEPOSITCONTRACTD": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "TERMDEPOSITCONTRACTD"
+  },
+  "TERMDEPOSITCONTRACTDSR": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "TERMDEPOSITCONTRACTDSR"
+  },
+  "MATDISINSTR": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "MATDISINSTR"
+  },
+  "TDDEPOSITQUERY": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "TDDEPOSITQUERY"
+  },
+  "StandingInstructionsMst": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "StandingInstructionsMst"
+  },
+  "CANCELSI": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "CANCELSI"
+  },
+  "LIENEARMARKING": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "LIENEARMARKING"
+  },
+  "LIENEARMARKINGCAN": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "LIENEARMARKINGCAN"
+  },
+  "SWEEPLINKACCOUNT": {
+    "top": "Masters",
+    "sub": "SWEEPMst",
+    "item": "SWEEPLINKACCOUNT"
+  },
+  "DPRDETAILS": {
+    "top": "Masters",
+    "sub": "currentAccount",
+    "item": "DPRDETAILS"
+  },
+  "CCREVIEWMASTER": {
+    "top": "Masters",
+    "sub": "currentAccount",
+    "item": "CCREVIEWMASTER"
+  },
+  "CCODADHOCLIMIT": {
+    "top": "Masters",
+    "sub": "currentAccount",
+    "item": "CCODADHOCLIMIT"
+  },
+  "GoldLoanApplnMst": {
+    "top": "Masters",
+    "sub": "goldloan",
+    "item": "GoldLoanApplnMst"
+  },
+  "PACKETPRDAPPRAISERDTLS": {
+    "top": "Masters",
+    "sub": "goldloan",
+    "item": "PACKETPRDAPPRAISERDTLS"
+  },
+  "LOANLIMIT": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "LOANLIMIT"
+  },
+  "LOANRESCHEDULEPROCESS": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "LOANRESCHEDULEPROCESS"
+  },
+  "LOANCLOSURE": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "LOANCLOSURE"
+  },
+  "LOANRESTRUCTUREPROCESS": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "LOANRESTRUCTUREPROCESS"
+  },
+  "PDCMASTER": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "PDCMASTER"
+  },
+  "LOANSECURITY": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "LOANSECURITY"
+  },
+  "LOANCOLLATERAL": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "LOANCOLLATERAL"
+  },
+  "NPAMGMT": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "NPAMGMT"
+  },
+  "LOCKERISSUEREG": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKERISSUEREG"
+  },
+  "LOCKEROPERATIONMST": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKEROPERATIONMST"
+  },
+  "LOCKERBREAKOPENREGISTER": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKERBREAKOPENREGISTER"
+  },
+  "LOCKERSURRENDERMST": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKERSURRENDERMST"
+  },
+  "PIGMYCUSTAGENTLINKMST": {
+    "top": "Masters",
+    "sub": "pigmy",
+    "item": "PIGMYCUSTAGENTLINKMST"
+  },
+  "AGENTREGMSTR": {
+    "top": "Masters",
+    "sub": "pigmy",
+    "item": "AGENTREGMSTR"
+  },
+  "SHAREMEMBERMAINTAIN": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "SHAREMEMBERMAINTAIN"
+  },
+  "SHAREALLOTMENT": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "SHAREALLOTMENT"
+  },
+  "SHARECLOSURE": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "SHARECLOSURE"
+  },
+  "SHAREDIVTRFINST": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "SHAREDIVTRFINST"
+  },
+  "KCCLOANSANCTION": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "KCCLOANSANCTION"
+  },
+  "KCCREPAYMENT": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "KCCREPAYMENT"
+  },
+  "MEMBERLINKAGEMASTER": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "MEMBERLINKAGEMASTER"
+  },
+  "TRANSACTIONMST": {
+    "top": "Transaction",
+    "sub": "RTGSTrxn",
+    "item": "TRANSACTIONMST"
+  },
+  "NEFTOUT": {
+    "top": "Transaction",
+    "sub": "RTGSTrxn",
+    "item": "NEFTOUT"
+  },
+  "DBTLFILEUPLOAD": {
+    "top": "Masters",
+    "sub": "DBTL",
+    "item": "DBTLFILEUPLOAD"
+  },
+  "FILEGENERATIONDBTL": {
+    "top": "Masters",
+    "sub": "DBTL",
+    "item": "FILEGENERATIONDBTL"
+  },
+  "NACHUPLOADLINK": {
+    "top": "Masters",
+    "sub": "DBTL",
+    "item": "NACHUPLOADLINK"
+  },
+  "TENANTMST": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "TENANTMST"
+  },
+  "BRANCHMGMT": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "BRANCHMGMT"
+  },
+  "AREAMASTER": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "AREAMASTER"
+  },
+  "MUNICIPALITYBLOCKMASTER": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "MUNICIPALITYBLOCKMASTER"
+  },
+  "VILLAGEMASTER": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "VILLAGEMASTER"
+  },
+  "URBANMASTER": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "URBANMASTER"
+  },
+  "IFSCMST": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "IFSCMST"
+  },
+  "COUNTRYMST": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "COUNTRYMST"
+  },
+  "STATEMST": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "STATEMST"
+  },
+  "DISTRICTMST": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "DISTRICTMST"
+  },
+  "EMPLOYEEMST": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "EMPLOYEEMST"
+  },
+  "USERMGMT": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "USERMGMT"
+  },
+  "RESETPWD": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "RESETPWD"
+  },
+  "UNLOCKUSER": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "UNLOCKUSER"
+  },
+  "USERROLESMST": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "USERROLESMST"
+  },
+  "ALLMENU2MST": {
+    "top": "Administration",
+    "sub": "menuManagementAdm",
+    "item": "ALLMENU2MST"
+  },
+  "ALLMENUMST": {
+    "top": "Administration",
+    "sub": "menuManagementAdm",
+    "item": "ALLMENUMST"
+  },
+  "HOLIDAY": {
+    "top": "Administration",
+    "sub": "calandholmgmt",
+    "item": "HOLIDAY"
+  },
+  "BRANCHHOLIDAYS": {
+    "top": "Administration",
+    "sub": "calandholmgmt",
+    "item": "BRANCHHOLIDAYS"
+  },
+  "MULTICURRENCY": {
+    "top": "Administration",
+    "sub": "currencyAdm",
+    "item": "MULTICURRENCY"
+  },
+  "CURRENCYDAILYRATE": {
+    "top": "Administration",
+    "sub": "currencyAdm",
+    "item": "CURRENCYDAILYRATE"
+  },
+  "PRODUCTMGMT": {
+    "top": "Configuration",
+    "sub": "productConfig",
+    "item": "PRODUCTMGMT"
+  },
+  "DEPOSITPARAMETERMST": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "DEPOSITPARAMETERMST"
+  },
+  "TDINTERESTMST": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "TDINTERESTMST"
+  },
+  "DAYENDPROCESS": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "DAYENDPROCESS"
+  },
+  "BRANCHHANDOVER": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "BRANCHHANDOVER"
+  },
+  "BATCHPROCESSING": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "BATCHPROCESSING"
+  },
+  "SRISSUE": {
+    "top": "Masters",
+    "sub": "SECURITYRECEIPT",
+    "item": "SRISSUE"
+  },
+  "SEQUENTIALFILE": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "SEQUENTIALFILE"
+  },
+  "CHECKBOOKUPLOAD": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "CHECKBOOKUPLOAD"
+  },
+  "ISSUEDCHEQUEBOOKS": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "ISSUEDCHEQUEBOOKS"
+  },
+  "UNUSEDCHEQUES": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "UNUSEDCHEQUES"
+  },
+  "TDINTERESTMATURITYDISPOALMST": {
+    "top": "Masters",
+    "sub": "td",
+    "item": "TDINTERESTMATURITYDISPOALMST"
+  },
+  "DPPARAM_MASTER": {
+    "top": "Masters",
+    "sub": "currentAccount",
+    "item": "DPPARAM_MASTER"
+  },
+  "CCODINSURANCE": {
+    "top": "Masters",
+    "sub": "currentAccount",
+    "item": "CCODINSURANCE"
+  },
+  "LENDERDTLS": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "LENDERDTLS"
+  },
+  "ANCHORDTLS": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "ANCHORDTLS"
+  },
+  "PDCSTATUSPRESENT": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "PDCSTATUSPRESENT"
+  },
+  "PDCSTATUSRETURN": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "PDCSTATUSRETURN"
+  },
+  "PDCSTATUSCANCEL": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "PDCSTATUSCANCEL"
+  },
+  "DIRECTORDETAILS": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "DIRECTORDETAILS"
+  },
+  "DIRECTORRELATIVE": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "DIRECTORRELATIVE"
+  },
+  "REPOSSESION": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "REPOSSESION"
+  },
+  "LOSTSTOLENINSTRUMENT": {
+    "top": "Masters",
+    "sub": "remittanceMst",
+    "item": "LOSTSTOLENINSTRUMENT"
+  },
+  "DEFAULTBENEFICIARYNAMEMST": {
+    "top": "Masters",
+    "sub": "remittanceMst",
+    "item": "DEFAULTBENEFICIARYNAMEMST"
+  },
+  "RECONCILIATION": {
+    "top": "Masters",
+    "sub": "remittanceMst",
+    "item": "RECONCILIATION"
+  },
+  "DDSCOMMISSIONPARAMMST": {
+    "top": "Masters",
+    "sub": "pigmy",
+    "item": "DDSCOMMISSIONPARAMMST"
+  },
+  "SHARENOMINEEMST": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "SHARENOMINEEMST"
+  },
+  "NOMINALMEMBERSHIP": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "NOMINALMEMBERSHIP"
+  },
+  "AGMATTENDANCEDETAILS": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "AGMATTENDANCEDETAILS"
+  },
+  "DividentMaster": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "DividentMaster"
+  },
+  "ASSETREQUISITION": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "ASSETREQUISITION"
+  },
+  "PURCHASEORDER": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "PURCHASEORDER"
+  },
+  "FIXEDASSETDETAILS": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "FIXEDASSETDETAILS"
+  },
+  "FIXEDASSETTRXN": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "FIXEDASSETTRXN"
+  },
+  "CROPWISEMAINTENANCE": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "CROPWISEMAINTENANCE"
+  },
+  "KCCSHAREPARAMETER": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "KCCSHAREPARAMETER"
+  },
+  "TRANSACTIONQUEUECLOSE": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "TRANSACTIONQUEUECLOSE"
+  },
+  "DYNAMICCBL": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "DYNAMICCBL"
+  },
+  "AUTORECONRULES": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "AUTORECONRULES"
+  },
+  "AUTORECONPROCESS": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "AUTORECONPROCESS"
+  },
+  "MANUALRECONPROCESS": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "MANUALRECONPROCESS"
+  },
+  "STATEMENTUPLOAD": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "STATEMENTUPLOAD"
+  },
+  "RECONEQUIRY": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "RECONEQUIRY"
+  },
+  "PROCESSDEINITION": {
+    "top": "Processes",
+    "sub": "CentralizeLoadConsole",
+    "item": "PROCESSDEINITION"
+  },
+  "CENTPRCSSTATUS": {
+    "top": "Processes",
+    "sub": "CentralizeLoadConsole",
+    "item": "CENTPRCSSTATUS"
+  },
+  "CUSTFILEUPLOAD": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "CUSTFILEUPLOAD"
+  },
+  "CUSTLIMITMSTFILEUPLOAD": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "CUSTLIMITMSTFILEUPLOAD"
+  },
+  "DAILYDEPOSITCOLLEAUTHREJ": {
+    "top": "Transaction",
+    "sub": "dailyDeposits",
+    "item": "DAILYDEPOSITCOLLEAUTHREJ"
+  },
+  "VAULTUSERACCESS": {
+    "top": "Transaction",
+    "sub": "denominationTrxn",
+    "item": "VAULTUSERACCESS"
+  },
+  "VAULTDENOMINATIONBALANCE": {
+    "top": "Transaction",
+    "sub": "denominationTrxn",
+    "item": "VAULTDENOMINATIONBALANCE"
+  },
+  "DENOMINATIONTXN": {
+    "top": "Transaction",
+    "sub": "denominationTrxn",
+    "item": "DENOMINATIONTXN"
+  },
+  "CASHBALDASHBOARD": {
+    "top": "Transaction",
+    "sub": "denominationTrxn",
+    "item": "CASHBALDASHBOARD"
+  },
+  "DORMTRFR": {
+    "top": "Transaction",
+    "sub": "txnentry",
+    "item": "DORMTRFR"
+  },
+  "TXNAUTHDENO": {
+    "top": "Transaction",
+    "sub": "trnAuth",
+    "item": "TXNAUTHDENO"
+  },
+  "OUTWARDFILEUPLOAD": {
+    "top": "Transaction",
+    "sub": "OutwardTrxn",
+    "item": "OUTWARDFILEUPLOAD"
+  },
+  "OUTWARDXMLFILEUPLOAD": {
+    "top": "Transaction",
+    "sub": "OutwardTrxn",
+    "item": "OUTWARDXMLFILEUPLOAD"
+  },
+  "INWARDREJECTIONHANDLING": {
+    "top": "Transaction",
+    "sub": "InwardTrxn",
+    "item": "INWARDREJECTIONHANDLING"
+  },
+  "INWARDVERIFICATION": {
+    "top": "Transaction",
+    "sub": "InwardTrxn",
+    "item": "INWARDVERIFICATION"
+  },
+  "INWARDRETURNSEQ": {
+    "top": "Transaction",
+    "sub": "InwardTrxn",
+    "item": "INWARDRETURNSEQ"
+  },
+  "ACHTXNHANDLINGPROCESS": {
+    "top": "Transaction",
+    "sub": "AchFileUploadTrxn",
+    "item": "ACHTXNHANDLINGPROCESS"
+  },
+  "RTGSCRHANDLINGAUTH": {
+    "top": "Transaction",
+    "sub": "RTGSTrxn",
+    "item": "RTGSCRHANDLINGAUTH"
+  },
+  "MandateHandling": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "MandateHandling"
+  },
+  "AADHARLINK": {
+    "top": "Transaction",
+    "sub": "aadharMst",
+    "item": "AADHARLINK"
+  },
+  "AADHARMAPPERFILE": {
+    "top": "Transaction",
+    "sub": "aadharMst",
+    "item": "AADHARMAPPERFILE"
+  },
+  "CASATRANSFER": {
+    "top": "Transaction",
+    "sub": "CASATRANSFER",
+    "item": "CASATRANSFER"
+  },
+  "RECEIPTAUTHPRINT": {
+    "top": "Transaction",
+    "sub": "RECEIPTAUTHPRINT",
+    "item": "RECEIPTAUTHPRINT"
+  },
+  "BANKPAYMENT": {
+    "top": "Transaction",
+    "sub": "BANKPAYMENT",
+    "item": "BANKPAYMENT"
+  },
+  "TOKEN": {
+    "top": "Transaction",
+    "sub": "TOKEN",
+    "item": "TOKEN"
+  },
+  "PFMS": {
+    "top": "Transaction",
+    "sub": "PFMS",
+    "item": "PFMS"
+  },
+  "NG030031": {
+    "top": "Reports",
+    "sub": "LoansRpt",
+    "item": "NG030031"
+  },
+  "NG020027": {
+    "top": "Reports",
+    "sub": "CASARpt",
+    "item": "NG020027"
+  },
+  "NG020023": {
+    "top": "Reports",
+    "sub": "TermDepositRep",
+    "item": "NG020023"
+  },
+  "NG099021": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "NG099021"
+  },
+  "NG099010": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "NG099010"
+  },
+  "NG099035": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "NG099035"
+  },
+  "RN9900014": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "RN9900014"
+  },
+  "RN0400007": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "RN0400007"
+  },
+  "RN9900018": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "RN9900018"
+  },
+  "RN9900016": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "RN9900016"
+  },
+  "RN9900015": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "RN9900015"
+  },
+  "RN0100001": {
+    "top": "Reports",
+    "sub": "Daily Reports1",
+    "item": "RN0100001"
+  },
+  "RN0200007": {
+    "top": "Reports",
+    "sub": "CASHRpt",
+    "item": "RN0200007"
+  },
+  "RN0200010": {
+    "top": "Reports",
+    "sub": "CASHRpt",
+    "item": "RN0200010"
+  },
+  "RN0600007": {
+    "top": "Reports",
+    "sub": "ALLOKRPTS",
+    "item": "RN0600007"
+  },
+  "RN0600001": {
+    "top": "Reports",
+    "sub": "ALLOKRPTS",
+    "item": "RN0600001"
+  },
+  "RN0600003": {
+    "top": "Reports",
+    "sub": "ALLOKRPTS",
+    "item": "RN0600003"
+  },
+  "RN0600004": {
+    "top": "Reports",
+    "sub": "ALLOKRPTS",
+    "item": "RN0600004"
+  },
+  "RN0300003": {
+    "top": "Reports",
+    "sub": "CTSClearingRpt",
+    "item": "RN0300003"
+  },
+  "LOANACCOUNTINFORMATION": {
+    "top": "Transaction",
+    "sub": "LOANACCOUNTINFORMATION",
+    "item": "LOANACCOUNTINFORMATION"
+  },
+  "TDPREMATUREVIEW": {
+    "top": "Transaction",
+    "sub": "TDPREMATUREVIEW",
+    "item": "TDPREMATUREVIEW"
+  },
+  "LOANACCOUNTCLOSUREHELP": {
+    "top": "Transaction",
+    "sub": "LOANACCOUNTCLOSUREHELP",
+    "item": "LOANACCOUNTCLOSUREHELP"
+  },
+  "CHANGEPASSWORD": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "CHANGEPASSWORD"
+  },
+  "USERLOGINSUSPEND": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "USERLOGINSUSPEND"
+  },
+  "RESETLOGGEDINUSER": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "RESETLOGGEDINUSER"
+  },
+  "FORGOTPASSWORD": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "FORGOTPASSWORD"
+  },
+  "USERWISEMULTIBRANCH": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "USERWISEMULTIBRANCH"
+  },
+  "LEAVEMASTER": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "LEAVEMASTER"
+  },
+  "RPTDIRECTORY": {
+    "top": "Administration",
+    "sub": "menuManagementAdm",
+    "item": "RPTDIRECTORY"
+  },
+  "ROLEBASEDQUICKMENU": {
+    "top": "Administration",
+    "sub": "menuManagementAdm",
+    "item": "ROLEBASEDQUICKMENU"
+  },
+  "DASHBOARDLOGINROLEPORTLET": {
+    "top": "Administration",
+    "sub": "dashboardmgmt",
+    "item": "DASHBOARDLOGINROLEPORTLET"
+  },
+  "DAILYRATEMST": {
+    "top": "Administration",
+    "sub": "currencyAdm",
+    "item": "DAILYRATEMST"
+  },
+  "CROSSCURRENCY": {
+    "top": "Administration",
+    "sub": "currencyAdm",
+    "item": "CROSSCURRENCY"
+  },
+  "CURRENCYMASTER": {
+    "top": "Administration",
+    "sub": "currencyAdm",
+    "item": "CURRENCYMASTER"
+  },
+  "BGRATETYPE": {
+    "top": "Administration",
+    "sub": "currencyAdm",
+    "item": "BGRATETYPE"
+  },
+  "BATCHMST": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "BATCHMST"
+  },
+  "SEQUENCENOMST": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "SEQUENCENOMST"
+  },
+  "LOOKUP": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "LOOKUP"
+  },
+  "TAXMASTER": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "TAXMASTER"
+  },
+  "PRDACNOCONFIG": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "PRDACNOCONFIG"
+  },
+  "TRNCODE": {
+    "top": "Administration",
+    "sub": "transactionConfig",
+    "item": "TRNCODE"
+  },
+  "TRNWORKFLOW": {
+    "top": "Administration",
+    "sub": "transactionConfig",
+    "item": "TRNWORKFLOW"
+  },
+  "SENDBULKSMS": {
+    "top": "Administration",
+    "sub": "smsAdm",
+    "item": "SENDBULKSMS"
+  },
+  "CUSTOMERKYCMST": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CUSTOMERKYCMST"
+  },
+  "NOMINEEMST": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "NOMINEEMST"
+  },
+  "LOANSURETY MST": {
+    "top": "Masters",
+    "sub": "loans",
+    "item": "LOANSURETY MST"
+  },
+  "BRTOBRMAP": {
+    "top": "Administration",
+    "sub": "setupAdm",
+    "item": "BRTOBRMAP"
+  },
+  "KCCLOANDISBURSE": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "KCCLOANDISBURSE"
+  },
+  "AGENTTRFUTIL": {
+    "top": "Transaction",
+    "sub": "dailyDeposits",
+    "item": "AGENTTRFUTIL"
+  },
+  "DOCUMENTVIEW": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "DOCUMENTVIEW"
+  },
+  "CUSTOMERBANKDETAILS": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CUSTOMERBANKDETAILS"
+  },
+  "IT_RETURNDETAILS": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "IT_RETURNDETAILS"
+  },
+  "MEMBERSHIPAPPLICATION": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "MEMBERSHIPAPPLICATION"
+  },
+  "206ABUPLOAD": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "206ABUPLOAD"
+  },
+  "15GSUBMISSION": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "15GSUBMISSION"
+  },
+  "FORMNO60": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "FORMNO60"
+  },
+  "CUSTDOCVIEW": {
+    "top": "Masters",
+    "sub": "customermgmt",
+    "item": "CUSTDOCVIEW"
+  },
+  "CUSTLIMITMASTER1": {
+    "top": "Masters",
+    "sub": "customerLimitMgmt",
+    "item": "CUSTLIMITMASTER1"
+  },
+  "ACCOUNTDOCUMENTCONFIGUARATION": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "ACCOUNTDOCUMENTCONFIGUARATION"
+  },
+  "CASATRNFPRCSS": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "CASATRNFPRCSS"
+  },
+  "CUSTUNIFICATION": {
+    "top": "Masters",
+    "sub": "accountmgmt",
+    "item": "CUSTUNIFICATION"
+  },
+  "photoandsign": {
+    "top": "Masters",
+    "sub": "photoandsign",
+    "item": "photoandsign"
+  },
+  "SECURITYRECEIPT": {
+    "top": "Masters",
+    "sub": "SECURITYRECEIPT",
+    "item": "SECURITYRECEIPT"
+  },
+  "instrumentMst": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "instrumentMst"
+  },
+  "PERSONALCHEQUEB00K": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "PERSONALCHEQUEB00K"
+  },
+  "PASSBOOKSTOCK": {
+    "top": "Masters",
+    "sub": "instrumentMst",
+    "item": "PASSBOOKSTOCK"
+  },
+  "SWEEPMst": {
+    "top": "Masters",
+    "sub": "SWEEPMst",
+    "item": "SWEEPMst"
+  },
+  "P013042": {
+    "top": "Masters",
+    "sub": "currentAccount",
+    "item": "P013042"
+  },
+  "MULTITRANCHDISBURSE": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "MULTITRANCHDISBURSE"
+  },
+  "POCTAXMASTER": {
+    "top": "Masters",
+    "sub": "termLoans",
+    "item": "POCTAXMASTER"
+  },
+  "RemittanceFreeLeavesParam": {
+    "top": "Masters",
+    "sub": "remittanceMst",
+    "item": "RemittanceFreeLeavesParam"
+  },
+  "LOCKERFREEZMST": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKERFREEZMST"
+  },
+  "LOCKERENTREGISTERMST": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKERENTREGISTERMST"
+  },
+  "LOCKERISSUEREG1": {
+    "top": "Masters",
+    "sub": "Locker",
+    "item": "LOCKERISSUEREG1"
+  },
+  "manualShareAllotment": {
+    "top": "Masters",
+    "sub": "shares",
+    "item": "manualShareAllotment"
+  },
+  "INVOICEMSTDTLS": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "INVOICEMSTDTLS"
+  },
+  "FAALLOCATION": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "FAALLOCATION"
+  },
+  "FATAGALLOCATION": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "FATAGALLOCATION"
+  },
+  "INVOICEGENRATION": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "INVOICEGENRATION"
+  },
+  "INVOICESETTLE": {
+    "top": "Masters",
+    "sub": "FixedAssetParameterMst",
+    "item": "INVOICESETTLE"
+  },
+  "INVOICEMST": {
+    "top": "Masters",
+    "sub": "AP/AR Management",
+    "item": "INVOICEMST"
+  },
+  "APARORIGINATION": {
+    "top": "Masters",
+    "sub": "AP/AR Management",
+    "item": "APARORIGINATION"
+  },
+  "APARSETTLEREVERSE": {
+    "top": "Masters",
+    "sub": "AP/AR Management",
+    "item": "APARSETTLEREVERSE"
+  },
+  "CROPTYPRPARAM": {
+    "top": "Masters",
+    "sub": "KCCMASTER",
+    "item": "CROPTYPRPARAM"
+  },
+  "SCHEDULEPOST": {
+    "top": "Masters",
+    "sub": "SCHEDULEPOST",
+    "item": "SCHEDULEPOST"
+  },
+  "SCHEUPENTRY": {
+    "top": "Masters",
+    "sub": "SCHEDULEPOST",
+    "item": "SCHEUPENTRY"
+  },
+  "SCHEDULEUPLOADMST": {
+    "top": "Masters",
+    "sub": "SCHEDULEPOST",
+    "item": "SCHEDULEUPLOADMST"
+  },
+  "SCHEDULEPOSTMST": {
+    "top": "Masters",
+    "sub": "SCHEDULEPOST",
+    "item": "SCHEDULEPOSTMST"
+  },
+  "SCHEDULEVOUCHER": {
+    "top": "Masters",
+    "sub": "SCHEDULEPOST",
+    "item": "SCHEDULEVOUCHER"
+  },
+  "GSTHSNMASTER": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "GSTHSNMASTER"
+  },
+  "CUSTANDGSTNUMLINK": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "CUSTANDGSTNUMLINK"
+  },
+  "MANUALCHARGES": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "MANUALCHARGES"
+  },
+  "GSTACCTPARAM": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "GSTACCTPARAM"
+  },
+  "GSTMANUALEXPENSE": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "GSTMANUALEXPENSE"
+  },
+  "CREDITNOTEEXPENSE": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "CREDITNOTEEXPENSE"
+  },
+  "GSTUPLOAD": {
+    "top": "Masters",
+    "sub": "GSTHSNMASTER",
+    "item": "GSTUPLOAD"
+  },
+  "SUBSIDPARA": {
+    "top": "Masters",
+    "sub": "SUBSIDY",
+    "item": "SUBSIDPARA"
+  },
+  "SUBSIDYINTEREST": {
+    "top": "Masters",
+    "sub": "SUBSIDY",
+    "item": "SUBSIDYINTEREST"
+  },
+  "SUBSIDYRECOVERY": {
+    "top": "Masters",
+    "sub": "SUBSIDY",
+    "item": "SUBSIDYRECOVERY"
+  },
+  "PMBYRegistration": {
+    "top": "Masters",
+    "sub": "PMSCHEMES",
+    "item": "PMBYRegistration"
+  },
+  "AllocationOfLot": {
+    "top": "Masters",
+    "sub": "PMSCHEMES",
+    "item": "AllocationOfLot"
+  },
+  "seqGenCustcreditLic": {
+    "top": "Masters",
+    "sub": "PMSCHEMES",
+    "item": "seqGenCustcreditLic"
+  },
+  "UPDATEUTR": {
+    "top": "Masters",
+    "sub": "PMSCHEMES",
+    "item": "UPDATEUTR"
+  },
+  "PRODUCTSCHEMEMST": {
+    "top": "Configuration",
+    "sub": "productConfig",
+    "item": "PRODUCTSCHEMEMST"
+  },
+  "DOCUMENTCONFIGURATION": {
+    "top": "Configuration",
+    "sub": "productConfig",
+    "item": "DOCUMENTCONFIGURATION"
+  },
+  "RDPARAM": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "RDPARAM"
+  },
+  "TDINTERESTOVERDUEMST": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "TDINTERESTOVERDUEMST"
+  },
+  "TDSPARAMETER": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "TDSPARAMETER"
+  },
+  "RECEIPTSTOCK": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "RECEIPTSTOCK"
+  },
+  "LOANCLEARINGPARAM": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "LOANCLEARINGPARAM"
+  },
+  "CUSTWISETDSEXP": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "CUSTWISETDSEXP"
+  },
+  "GLOBALTDSPARAM": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "GLOBALTDSPARAM"
+  },
+  "TDS_PARAMETER": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "TDS_PARAMETER"
+  },
+  "RDPENALRATEENTRYMSTR": {
+    "top": "Configuration",
+    "sub": "tdconfig",
+    "item": "RDPENALRATEENTRYMSTR"
+  },
+  "DPRSHARESRATEMST": {
+    "top": "Configuration",
+    "sub": "Advances",
+    "item": "DPRSHARESRATEMST"
+  },
+  "LOANACCNTSECPARAM": {
+    "top": "Configuration",
+    "sub": "termloanConfig",
+    "item": "LOANACCNTSECPARAM"
+  },
+  "BranchWiseCollectionHolidayMaster": {
+    "top": "Configuration",
+    "sub": "termloanConfig",
+    "item": "BranchWiseCollectionHolidayMaster"
+  },
+  "ParamsNPAProvision": {
+    "top": "Configuration",
+    "sub": "NPAMGMTConfig",
+    "item": "ParamsNPAProvision"
+  },
+  "SECURITYDEPRECIATION": {
+    "top": "Configuration",
+    "sub": "NPAMGMTConfig",
+    "item": "SECURITYDEPRECIATION"
+  },
+  "RULESETMST": {
+    "top": "Configuration",
+    "sub": "NPAMGMTConfig",
+    "item": "RULESETMST"
+  },
+  "RULECONDITION": {
+    "top": "Configuration",
+    "sub": "NPAMGMTConfig",
+    "item": "RULECONDITION"
+  },
+  "RULETEMPLATEMST": {
+    "top": "Configuration",
+    "sub": "NPAMGMTConfig",
+    "item": "RULETEMPLATEMST"
+  },
+  "BANKBRANCHDIR": {
+    "top": "Configuration",
+    "sub": "remittanceConfig",
+    "item": "BANKBRANCHDIR"
+  },
+  "REMITINSTRUMENTLIMIT": {
+    "top": "Configuration",
+    "sub": "remittanceConfig",
+    "item": "REMITINSTRUMENTLIMIT"
+  },
+  "LastAssignNoMaintenance": {
+    "top": "Configuration",
+    "sub": "remittanceConfig",
+    "item": "LastAssignNoMaintenance"
+  },
+  "LOCKERKEY": {
+    "top": "Configuration",
+    "sub": "lockerConfig",
+    "item": "LOCKERKEY"
+  },
+  "NEWKEYALLOTMENT": {
+    "top": "Configuration",
+    "sub": "lockerConfig",
+    "item": "NEWKEYALLOTMENT"
+  },
+  "LOCKERPARAMETER": {
+    "top": "Configuration",
+    "sub": "lockerConfig",
+    "item": "LOCKERPARAMETER"
+  },
+  "FADEPRICIATION": {
+    "top": "Configuration",
+    "sub": "FixedAssetParameterConfig",
+    "item": "FADEPRICIATION"
+  },
+  "ASSETMAPPING": {
+    "top": "Configuration",
+    "sub": "FixedAssetParameterConfig",
+    "item": "ASSETMAPPING"
+  },
+  "PASSBOOKLINEDEFENITION": {
+    "top": "Configuration",
+    "sub": "passbookconfig",
+    "item": "PASSBOOKLINEDEFENITION"
+  },
+  "PASSBOOKPAGEDEFINITION": {
+    "top": "Configuration",
+    "sub": "passbookconfig",
+    "item": "PASSBOOKPAGEDEFINITION"
+  },
+  "PASSBOOKSTRUCTUREDEFINITION": {
+    "top": "Configuration",
+    "sub": "passbookconfig",
+    "item": "PASSBOOKSTRUCTUREDEFINITION"
+  },
+  "FOLIOCHARGE": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "FOLIOCHARGE"
+  },
+  "CHEQUEISSUECHARGE": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "CHEQUEISSUECHARGE"
+  },
+  "INWORDOUTWORDCHEQUECHARGES": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "INWORDOUTWORDCHEQUECHARGES"
+  },
+  "EARLYCLOSERCHARGE": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "EARLYCLOSERCHARGE"
+  },
+  "REMCHARGESPARAM": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "REMCHARGESPARAM"
+  },
+  "DUPSTATEMENTANDPASSBOOKCHARGE": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "DUPSTATEMENTANDPASSBOOKCHARGE"
+  },
+  "LOANCHARGES": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "LOANCHARGES"
+  },
+  "LOANNOTICECHARGEMST": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "LOANNOTICECHARGEMST"
+  },
+  "LOCKERCHARGEMST": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "LOCKERCHARGEMST"
+  },
+  "RTGSChargesMst": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "RTGSChargesMst"
+  },
+  "OUPCHARGEMST": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "OUPCHARGEMST"
+  },
+  "GSTCHARGESPARAM": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "GSTCHARGESPARAM"
+  },
+  "VOS": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "VOS"
+  },
+  "ACCOUNTWISECHARGESEXMMST": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "ACCOUNTWISECHARGESEXMMST"
+  },
+  "COMMANCHARGE": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "COMMANCHARGE"
+  },
+  "GLOBALFEES": {
+    "top": "Configuration",
+    "sub": "CHARGESPARAMConfig",
+    "item": "GLOBALFEES"
+  },
+  "FOREXPARAM": {
+    "top": "Configuration",
+    "sub": "FxGeneralParamConfig",
+    "item": "FOREXPARAM"
+  },
+  "CLEARINGINWARDPARAMCONFIG": {
+    "top": "Configuration",
+    "sub": "CLEARINGCONFIG",
+    "item": "CLEARINGINWARDPARAMCONFIG"
+  },
+  "LOTPARAMETER": {
+    "top": "Configuration",
+    "sub": "CLEARINGCONFIG",
+    "item": "LOTPARAMETER"
+  },
+  "IORETURNREASONCODE": {
+    "top": "Configuration",
+    "sub": "CLEARINGCONFIG",
+    "item": "IORETURNREASONCODE"
+  },
+  "LOANCYCLEPARAM": {
+    "top": "Configuration",
+    "sub": "globalloanconfig",
+    "item": "LOANCYCLEPARAM"
+  },
+  "LOANCYCLEOFFSETPARAM": {
+    "top": "Configuration",
+    "sub": "globalloanconfig",
+    "item": "LOANCYCLEOFFSETPARAM"
+  },
+  "CustomerwiseOffsetMaster": {
+    "top": "Configuration",
+    "sub": "globalloanconfig",
+    "item": "CustomerwiseOffsetMaster"
+  },
+  "PRINTTEMPLATE": {
+    "top": "Configuration",
+    "sub": "receiptconfig",
+    "item": "PRINTTEMPLATE"
+  },
+  "USEREGD": {
+    "top": "Administration",
+    "sub": "usermgmtAdm",
+    "item": "USEREGD"
+  },
+  "EXCEPTIONDETAILS": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "EXCEPTIONDETAILS"
+  },
+  "GLOBALEXCEPTIONDETAILS": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "GLOBALEXCEPTIONDETAILS"
+  },
+  "INSTRUMENTCONFIG": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "INSTRUMENTCONFIG"
+  },
+  "DATAPORT": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "DATAPORT"
+  },
+  "DATAPORTUTILITY": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "DATAPORTUTILITY"
+  },
+  "PRNFORMATMST": {
+    "top": "Administration",
+    "sub": "applicationmgmt",
+    "item": "PRNFORMATMST"
+  },
+  "TXNSCREENELEMENT": {
+    "top": "Administration",
+    "sub": "transactionConfig",
+    "item": "TXNSCREENELEMENT"
+  },
+  "TXNSCREENMAPPER": {
+    "top": "Administration",
+    "sub": "transactionConfig",
+    "item": "TXNSCREENMAPPER"
+  },
+  "USERTRNACCESS": {
+    "top": "Administration",
+    "sub": "transactionConfig",
+    "item": "USERTRNACCESS"
+  },
+  "RENDERTEMPLATE": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "RENDERTEMPLATE"
+  },
+  "BULKPRINT": {
+    "top": "Processes",
+    "sub": "dailyactivty",
+    "item": "BULKPRINT"
+  },
+  "COMPANYMASTER": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "COMPANYMASTER"
+  },
+  "CORRBNKDTLS": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "CORRBNKDTLS"
+  },
+  "LEDGERRECORDCREATION": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "LEDGERRECORDCREATION"
+  },
+  "FILEUPLOADPEOCESS": {
+    "top": "Processes",
+    "sub": "BANK&NOSTROREC",
+    "item": "FILEUPLOADPEOCESS"
+  },
+  "CentralizeLoadConsole": {
+    "top": "Processes",
+    "sub": "CENTRALIZEDPROCESS",
+    "item": "CentralizeLoadConsole"
+  },
+  "PRCSSGRPMST": {
+    "top": "Processes",
+    "sub": "CENTRALIZEDPROCESS",
+    "item": "PRCSSGRPMST"
+  },
+  "CENTRALIZEPROCESS": {
+    "top": "Processes",
+    "sub": "CENTRALIZEDPROCESS",
+    "item": "CENTRALIZEPROCESS"
+  },
+  "REPORTREQUESTENQUIRY": {
+    "top": "Processes",
+    "sub": "CENTRALIZEDPROCESS",
+    "item": "REPORTREQUESTENQUIRY"
+  },
+  "NOTIFISCHEDULEMANAGER": {
+    "top": "Processes",
+    "sub": "CENTRALIZEDPROCESS",
+    "item": "NOTIFISCHEDULEMANAGER"
+  },
+  "SALARYFILEUPLOADPROCESS": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "SALARYFILEUPLOADPROCESS"
+  },
+  "PROPCOLLATERALFILEUPLOAD": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "PROPCOLLATERALFILEUPLOAD"
+  },
+  "EXCESSAMOUNTMST": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "EXCESSAMOUNTMST"
+  },
+  "BULKDISBURSELOAN": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "BULKDISBURSELOAN"
+  },
+  "FILEUPLOAD": {
+    "top": "Processes",
+    "sub": "SALARYFILEUPLOADPROCESS",
+    "item": "FILEUPLOAD"
+  },
+  "LOANSUBSIDY": {
+    "top": "Processes",
+    "sub": "loanrecoveryprocess",
+    "item": "LOANSUBSIDY"
+  },
+  "CIBILRATING": {
+    "top": "Processes",
+    "sub": "loanrecoveryprocess",
+    "item": "CIBILRATING"
+  },
+  "PortfolioTranfer": {
+    "top": "Processes",
+    "sub": "loanrecoveryprocess",
+    "item": "PortfolioTranfer"
+  },
+  "NPAPROCESS": {
+    "top": "Processes",
+    "sub": "loanrecoveryprocess",
+    "item": "NPAPROCESS"
+  },
+  "REMITTANCERECONENTRY": {
+    "top": "Transaction",
+    "sub": "txnentry",
+    "item": "REMITTANCERECONENTRY"
+  },
+  "BULKVCRCANCELPROC": {
+    "top": "Transaction",
+    "sub": "trnCancel",
+    "item": "BULKVCRCANCELPROC"
+  },
+  "OUTWARDDOWNLOAD": {
+    "top": "Transaction",
+    "sub": "OutwardTrxn",
+    "item": "OUTWARDDOWNLOAD"
+  },
+  "INSTRUMENTUPDATEDETAILS": {
+    "top": "Transaction",
+    "sub": "InwardTrxn",
+    "item": "INSTRUMENTUPDATEDETAILS"
+  },
+  "BRANCHCHANGEUTILITY": {
+    "top": "Transaction",
+    "sub": "InwardTrxn",
+    "item": "BRANCHCHANGEUTILITY"
+  },
+  "TRANSACTIONCANCELLATION": {
+    "top": "Transaction",
+    "sub": "trnCancel",
+    "item": "TRANSACTIONCANCELLATION"
+  },
+  "INWARDREFTOBRANCH": {
+    "top": "Transaction",
+    "sub": "InwardTrxn",
+    "item": "INWARDREFTOBRANCH"
+  },
+  "AchFileUploadTrxn": {
+    "top": "Transaction",
+    "sub": "AchFileUploadTrxn",
+    "item": "AchFileUploadTrxn"
+  },
+  "ACHRTNFILEGEN": {
+    "top": "Transaction",
+    "sub": "AchFileUploadTrxn",
+    "item": "ACHRTNFILEGEN"
+  },
+  "MandateXmlAndZipGeneration": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "MandateXmlAndZipGeneration"
+  },
+  "MandateXmlUploadUtility": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "MandateXmlUploadUtility"
+  },
+  "OUTWARDECSSEQGEN": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "OUTWARDECSSEQGEN"
+  },
+  "ManageDestinationMandateUtility": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "ManageDestinationMandateUtility"
+  },
+  "MandateHandlingProcessing": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "MandateHandlingProcessing"
+  },
+  "ACKFILECRDEST": {
+    "top": "Transaction",
+    "sub": "DestinationMandate",
+    "item": "ACKFILECRDEST"
+  },
+  "ECSASWHENUPDATE": {
+    "top": "Transaction",
+    "sub": "ECSLinkMasters",
+    "item": "ECSASWHENUPDATE"
+  },
+  "BILLPAYMENT": {
+    "top": "Transaction",
+    "sub": "BILLPAYMENT",
+    "item": "BILLPAYMENT"
+  },
+  "BILLERACCOUNT": {
+    "top": "Transaction",
+    "sub": "BILLPAYMENT",
+    "item": "BILLERACCOUNT"
+  },
+  "CUSTOMERADHARCARDLINK": {
+    "top": "Transaction",
+    "sub": "aadharMst",
+    "item": "CUSTOMERADHARCARDLINK"
+  },
+  "POAFILEGEN": {
+    "top": "Transaction",
+    "sub": "STATEGOVFIN",
+    "item": "POAFILEGEN"
+  },
+  "LIQUIDATIONAUTHPRINT": {
+    "top": "Transaction",
+    "sub": "STATEGOVFIN",
+    "item": "LIQUIDATIONAUTHPRINT"
+  },
+  "LIQUIORDER": {
+    "top": "Transaction",
+    "sub": "STATEGOVFIN",
+    "item": "LIQUIORDER"
+  },
+  "STATEGFDP": {
+    "top": "Transaction",
+    "sub": "STATEGOVFIN",
+    "item": "STATEGFDP"
+  },
+  "INVESTMENTORDER": {
+    "top": "Transaction",
+    "sub": "STATEGOVFIN",
+    "item": "INVESTMENTORDER"
+  }
+}

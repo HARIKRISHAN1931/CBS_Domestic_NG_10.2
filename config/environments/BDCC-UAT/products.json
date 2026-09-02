@@ -1,0 +1,15 @@
+{
+  "CASA": {
+    "SB":  { "code": "SB",  "name": "Savings Bank",     "schemes": ["SB001", "SB002"] },
+    "CA":  { "code": "CA",  "name": "Current Account",   "schemes": ["CA001"] },
+    "RD":  { "code": "RD",  "name": "Recurring Deposit", "schemes": ["RD001"] }
+  },
+  "TD": {
+    "FD":  { "code": "FD",  "name": "Fixed Deposit",     "schemes": ["FD001", "FD002"] },
+    "MIS": { "code": "MIS", "name": "Monthly Income",    "schemes": ["MIS001"] }
+  },
+  "LOAN": {
+    "HL":  { "code": "HL",  "name": "Home Loan",         "schemes": ["HL001"] },
+    "PL":  { "code": "PL",  "name": "Personal Loan",     "schemes": ["PL001"] }
+  }
+}

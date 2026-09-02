@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target":           "ES2022",
+    "module":           "commonjs",
+    "lib":              ["ES2022", "DOM"],
+    "strict":           true,
+    "esModuleInterop":  true,
+    "skipLibCheck":     true,
+    "outDir":           "./dist",
+    "rootDir":          "./",
+    "baseUrl":          "./",
+    "paths": {
+      "@framework/*":  ["src/framework/*"],
+      "@common/*":     ["src/common/*"],
+      "@workflows/*":  ["src/workflows/*"],
+      "@queries/*":    ["src/queries/*"],
+      "@modules/*":    ["src/modules/*"],
+      "@api/*":        ["src/api/*"],
+      "@validators/*": ["business-validators/*"],
+      "@testdata/*":   ["testdata/*"]
+    },
+    "resolveJsonModule": true,
+    "declaration":       true,
+    "declarationMap":    true,
+    "sourceMap":         true
+  },
+  "include": ["src/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "dist", "allure-report", "allure-results", "test-results", "src/framework/reports/CbsReporter.ts"]
+}

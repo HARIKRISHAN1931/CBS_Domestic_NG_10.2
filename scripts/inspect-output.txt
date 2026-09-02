@@ -1,0 +1,12 @@
+Logged in as demo1. URL: http://172.21.0.39:7999/Kiya.aiCBS-10.2.0/secure-session
+Customer list URL: http://172.21.0.39:7999/Kiya.aiCBS-10.2.0/customerList?menuCode=CUSTOMER&vToken=5506295
+
+================================================================================
+SECTION: LIST VIEW — Pending Tab
+================================================================================
+
+--- INPUTS (1) ---
+  id="" type="search" label="" placeholder="" required=false readonly=false disabled=false maxlength="" pattern="" value=""
+
+--- SELECTS (1) ---
+  id="" label="" required=false disabled=false

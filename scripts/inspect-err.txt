@@ -1,0 +1,6 @@
+d:\CBS_Domestic_NG_10.2\scripts\inspect-customer-screen.ts:57
+    if (opts.length < 60) opts.forEach((o: string) => console.log(`      opt: ${o}`));
+             ^
+TypeError: Cannot read properties of undefined (reading 'length')
+    at dump (d:\CBS_Domestic_NG_10.2\scripts\inspect-customer-screen.ts:57:14)
+    at async d:\CBS_Domestic_NG_10.2\scripts\inspect-customer-screen.ts:253:3

@@ -1,0 +1,21 @@
+{
+  "customer":       { "top": "Masters",        "sub": "customermgmt",   "item": "CUSTOMER",              "tag": "Customer Creation" },
+  "casa":           { "top": "Masters",        "sub": "accountmgmt",    "item": "PRDACNOMST",            "tag": "Customer Account Creation" },
+  "td":             { "top": "Masters",        "sub": "td",             "item": "TERMDEPOSITCONTRACTD",  "tag": "Term Deposit Contract" },
+  "loan":           { "top": "Masters",        "sub": "termLoans",      "item": "LOANLIMIT",             "tag": "Loan Limit Details" },
+  "rtgs":           { "top": "Transaction",    "sub": "RTGSTrxn",       "item": "TRANSACTIONMST",        "tag": "RTGS Entry" },
+  "neft":           { "top": "Transaction",    "sub": "RTGSTrxn",       "item": "NEFTOUT",               "tag": "NEFT Entry" },
+  "employeeMaster": { "top": "Administration", "sub": "usermgmtAdm",    "item": "EMPLOYEEMST",           "tag": "Employee Master" },
+  "userMaster":     { "top": "Administration", "sub": "usermgmtAdm",    "item": "USERMGMT",              "tag": "User Master" },
+  "branchMaster":   { "top": "Administration", "sub": "setupAdm",       "item": "BRANCHMGMT",            "tag": "Branch Management" },
+  "tenantMaster":   { "top": "Administration", "sub": "setupAdm",       "item": "TENANTMST",             "tag": "Tenant Master" },
+  "tenantGroup":    { "top": "Administration", "sub": "setupAdm",       "item": "TENANTGROUPMST",        "tag": "Tenant Group Master" },
+  "countryMaster":  { "top": "Administration", "sub": "setupAdm",       "item": "COUNTRYMST",            "tag": "Country Master" },
+  "stateMaster":    { "top": "Administration", "sub": "setupAdm",       "item": "STATEMST",              "tag": "State Master" },
+  "districtMaster": { "top": "Administration", "sub": "setupAdm",       "item": "DISTRICTMST",           "tag": "District Master" },
+  "blockMunicipal": { "top": "Administration", "sub": "setupAdm",       "item": "MUNICIPALITYBLOCKMASTER","tag": "Block Municipal Master" },
+  "villageMaster":  { "top": "Administration", "sub": "setupAdm",       "item": "VILLAGEMASTER",         "tag": "Village Master" },
+  "urbanMaster":    { "top": "Administration", "sub": "setupAdm",       "item": "URBANMASTER",           "tag": "Urban Master" },
+  "ifscMaster":     { "top": "Administration", "sub": "setupAdm",       "item": "IFSCMST",               "tag": "IFSC Master" },
+  "branchMapping":  { "top": "Administration", "sub": "setupAdm",       "item": "BRTOBRMAPP",            "tag": "Branch To Branch Mapping" }
+}

@@ -1,0 +1,12 @@
+{
+  "minimumBalance":     { "SB": 500,    "CA": 5000  },
+  "maxWithdrawal":      { "SB": 50000,  "CA": 500000 },
+  "tdMinAmount":        1000,
+  "tdMaxAmount":        10000000,
+  "loanMinAmount":      10000,
+  "loanMaxAmount":      5000000,
+  "rtgsMinAmount":      200000,
+  "neftMinAmount":      1,
+  "interestCreditFreq": ["Monthly", "Quarterly", "HalfYearly", "Yearly", "Maturity"],
+  "modeOfOperation":    ["Single", "Joint", "Either or Survivor", "Anyone or Survivor"]
+}

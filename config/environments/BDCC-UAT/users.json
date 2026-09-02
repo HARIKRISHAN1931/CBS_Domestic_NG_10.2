@@ -1,0 +1,5 @@
+{
+  "maker":   { "username": "", "password": "" },
+  "checker": { "username": "", "password": "" },
+  "viewer":  { "username": "", "password": "" }
+}

@@ -1,0 +1,12 @@
+{
+  "HO":   { "code": "100", "name": "HeadOffice",   "clerk": "CLERK100", "manager": "MGR100", "password": "Abcd@1243" },
+  "BUR":  { "code": "101", "name": "Burdwan",       "clerk": "CLERK101", "manager": "MGR101", "password": "Abcd@1243" },
+  "MEM":  { "code": "102", "name": "Memari",        "clerk": "CLERK102", "manager": "MGR102", "password": "Abcd@1243" },
+  "CHA":  { "code": "103", "name": "Chaitanya",     "clerk": "CLERK103", "manager": "MGR103", "password": "Abcd@1243" },
+  "GUS":  { "code": "104", "name": "Guskara",       "clerk": "CLERK104", "manager": "MGR104", "password": "Abcd@1243" },
+  "SEH":  { "code": "105", "name": "Seharabazar",   "clerk": "CLERK105", "manager": "MGR105", "password": "Abcd@1243" },
+  "ASA":  { "code": "106", "name": "Asansol",       "clerk": "CLERK106", "manager": "MGR106", "password": "Abcd@1243" },
+  "CTY":  { "code": "107", "name": "CityCentre",    "clerk": "CLERK107", "manager": "MGR107", "password": "Abcd@1243" },
+  "KAT":  { "code": "108", "name": "Katwa",         "clerk": "CLERK108", "manager": "MGR108", "password": "Abcd@1243" },
+  "KAL":  { "code": "109", "name": "Kalna",         "clerk": "CLERK109", "manager": "MGR109", "password": "Abcd@1243" }
+}

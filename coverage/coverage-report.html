@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CBS Business Coverage Dashboard</title>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;
+  --accent:#6366f1;--radius:10px;--shadow:0 1px 4px rgba(0,0,0,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+h1{font-size:1.5rem;font-weight:700}
+h2{font-size:1rem;font-weight:600;margin-bottom:12px}
+.header{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:#fff;padding:20px 32px;
+  display:flex;align-items:center;gap:16px}
+.header-right{margin-left:auto;text-align:right;font-size:.8rem;opacity:.8;line-height:1.6}
+.nav{background:#1e293b;display:flex;gap:2px;padding:0 32px;overflow-x:auto}
+.nav a{color:#94a3b8;padding:10px 16px;font-size:.85rem;border-bottom:2px solid transparent;
+  cursor:pointer;white-space:nowrap}
+.nav a.active,.nav a:hover{color:#fff;border-color:#6366f1}
+.main{padding:24px 32px;max-width:1600px;margin:0 auto}
+.section{display:none}.section.active{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.stat{text-align:center;padding:16px;background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow)}
+.stat .val{font-size:2rem;font-weight:700;line-height:1}
+.stat .lbl{font-size:.72rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+th{background:#f1f5f9;padding:9px 12px;text-align:left;font-weight:600;
+  border-bottom:2px solid var(--border);white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:hover td{background:#f8fafc}
+.bar-wrap{background:#e5e7eb;border-radius:4px;height:7px;overflow:hidden;min-width:80px}
+.bar{height:100%;border-radius:4px}
+.cov-badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
+.rank-card{display:flex;align-items:center;gap:12px;padding:10px 0;
+  border-bottom:1px solid var(--border)}
+.rank-card:last-child{border:none}
+.rank-num{font-size:1.4rem;font-weight:700;color:var(--muted);min-width:28px}
+.rank-name{font-weight:600;flex:1}
+.module-name{font-weight:600;color:#1e293b}
+.trend-row{display:flex;align-items:center;gap:12px;padding:8px 0;
+  border-bottom:1px solid var(--border)}
+.trend-row:last-child{border:none}
+.trend-date{font-size:.8rem;color:var(--muted);min-width:90px}
+@media(max-width:900px){.grid-4{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div style="font-size:.72rem;opacity:.65;margin-bottom:2px;letter-spacing:.08em">CBS DOMESTIC NG 10.2</div>
+    <h1>Business Coverage Dashboard</h1>
+    <div style="font-size:.82rem;margin-top:4px;opacity:.8">Automation Coverage Tracking — All Modules</div>
+  </div>
+  <div class="header-right">
+    <div>Generated: 2026-09-01 18:20:06</div>
+    <div>Modules: 20 &nbsp;|&nbsp; Tests: 57</div>
+    <div style="margin-top:6px">
+      <span style="background:#ef4444;color:#fff;padding:3px 14px;
+        border-radius:20px;font-weight:700;font-size:.9rem">
+        49% COVERAGE
+      </span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <a data-sec="sec-overview"  onclick="show('sec-overview')"  class="active">📊 Overview</a>
+  <a data-sec="sec-modules"   onclick="show('sec-modules')">📦 Module Detail</a>
+  <a data-sec="sec-rankings"  onclick="show('sec-rankings')">🏆 Rankings</a>
+  <a data-sec="sec-trend"     onclick="show('sec-trend')">📈 Trend</a>
+</nav>
+
+<div class="main">
+  <div class="section active" id="sec-overview">
+    <h2 style="margin-bottom:16px">Executive Overview</h2>
+    
+<div class="grid-4">
+  <div class="stat"><div class="val" style="color:#ef4444">49%</div><div class="lbl">Overall Coverage</div></div>
+  <div class="stat"><div class="val" style="color:#6366f1">20</div><div class="lbl">Modules</div></div>
+  <div class="stat"><div class="val" style="color:#0ea5e9">17/38</div><div class="lbl">Screens Automated</div></div>
+  <div class="stat"><div class="val" style="color:#8b5cf6">57</div><div class="lbl">Total Tests</div></div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h2>Coverage Trend</h2>
+    <span style="color:#94a3b8;font-size:.8rem">No trend data yet</span>
+    <div style="margin-top:10px;display:flex;gap:24px;font-size:.85rem">
+      <span>Current: <strong>49%</strong></span>
+      <span>Previous: <strong>N/A%</strong></span>
+      <span>Growth: <span style="color:#64748b">● Stable</span></span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Test Distribution</h2>
+    <table>
+      <thead><tr><th>Suite</th><th>Count</th><th>Share</th></tr></thead>
+      <tbody>
+        <tr><td>Smoke</td><td><strong>28</strong></td>
+     <td><div class="bar-wrap"><div class="bar" style="width:49%;background:#22c55e"></div></div></td></tr><tr><td>Sanity</td><td><strong>0</strong></td>
+     <td><div class="bar-wrap"><div class="bar" style="width:0%;background:#6366f1"></div></div></td></tr><tr><td>Regression</td><td><strong>26</strong></td>
+     <td><div class="bar-wrap"><div class="bar" style="width:46%;background:#f59e0b"></div></div></td></tr><tr><td>E2E</td><td><strong>3</strong></td>
+     <td><div class="bar-wrap"><div class="bar" style="width:5%;background:#0ea5e9"></div></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Module Coverage Overview</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Module</th><th>Screens</th><th>Screen Cov.</th>
+        <th>Workflows</th><th>Wf Cov.</th>
+        <th>Smoke</th><th>Sanity</th><th>Regression</th><th>E2E</th>
+        <th>Overall</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td class="module-name">Administration</td>
+    <td>1/14</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:7%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">7%</span></td>
+    <td>1/21</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:5%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">5%</span></td>
+    <td>4</td>
+    <td>0</td>
+    <td>6</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:12%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">12%</span></td>
+  </tr><tr>
+    <td class="module-name">CASA</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>1/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+  </tr><tr>
+    <td class="module-name">CCOD</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">Clearing</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">Customer</td>
+    <td>1/6</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:17%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">17%</span></td>
+    <td>1/9</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:11%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">11%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>6</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:22%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">22%</span></td>
+  </tr><tr>
+    <td class="module-name">FixedAssets</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">GL</td>
+    <td>0/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+  </tr><tr>
+    <td class="module-name">GoldLoan</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">KCC</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">Loans</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>1/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+  </tr><tr>
+    <td class="module-name">Locker</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:60%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
+  </tr><tr>
+    <td class="module-name">NACH</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:60%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
+  </tr><tr>
+    <td class="module-name">NEFT</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>1/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:75%;background:#f59e0b"></div>
+  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">75%</span></td>
+  </tr><tr>
+    <td class="module-name">Pigmy</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">Processes</td>
+    <td>1/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    <td>0/3</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:25%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">25%</span></td>
+  </tr><tr>
+    <td class="module-name">Reports</td>
+    <td>0/0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>0/0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:30%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">30%</span></td>
+  </tr><tr>
+    <td class="module-name">RTGS</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>1/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>2</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+  </tr><tr>
+    <td class="module-name">Shares</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+  </tr><tr>
+    <td class="module-name">TD</td>
+    <td>1/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:100%;background:#22c55e"></div>
+  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+    <td>1/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:50%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    <td>2</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+  </tr><tr>
+    <td class="module-name">Transaction</td>
+    <td>0/1</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>0/2</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td><div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+  <div class="section" id="sec-modules">
+    <h2 style="margin-bottom:16px">Module Detail</h2>
+    <div class="card">
+<input type="text" placeholder="Filter modules…" oninput="filter(this.value)"
+  style="padding:7px 14px;border:1px solid var(--border);border-radius:6px;
+  margin-bottom:16px;width:280px;font-size:.85rem">
+<table id="mod-table">
+  <thead>
+    <tr>
+      <th>Module</th><th>Pages</th><th>Workflows</th><th>Validators</th>
+      <th>Repos</th><th>Smoke</th><th>Sanity</th><th>Regression</th><th>E2E</th>
+      <th>Screen%</th><th>Workflow%</th><th>Overall%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="module-name">Administration</td>
+      <td>14</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">7%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">5%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">12%</span></td>
+    </tr><tr>
+      <td class="module-name">CASA</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+    </tr><tr>
+      <td class="module-name">CCOD</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">Clearing</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">Customer</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">17%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">11%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">22%</span></td>
+    </tr><tr>
+      <td class="module-name">FixedAssets</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">GL</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    </tr><tr>
+      <td class="module-name">GoldLoan</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">KCC</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">Loans</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+    </tr><tr>
+      <td class="module-name">Locker</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
+    </tr><tr>
+      <td class="module-name">NACH</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
+    </tr><tr>
+      <td class="module-name">NEFT</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">75%</span></td>
+    </tr><tr>
+      <td class="module-name">Pigmy</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">Processes</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">25%</span></td>
+    </tr><tr>
+      <td class="module-name">Reports</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">30%</span></td>
+    </tr><tr>
+      <td class="module-name">RTGS</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+    </tr><tr>
+      <td class="module-name">Shares</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+    </tr><tr>
+      <td class="module-name">TD</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
+      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
+    </tr><tr>
+      <td class="module-name">Transaction</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
+    </tr>
+  </tbody>
+</table></div>
+  </div>
+  <div class="section" id="sec-rankings">
+    <h2 style="margin-bottom:16px">Module Rankings</h2>
+    
+<div class="grid-2">
+  <div class="card">
+    <h2>🏆 Top 5 Best Covered</h2>
+    
+  <div class="rank-card">
+    <span class="rank-num">#1</span>
+    <span class="rank-name">CASA</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div>
+    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#2</span>
+    <span class="rank-name">Loans</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div>
+    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#3</span>
+    <span class="rank-name">RTGS</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div>
+    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#4</span>
+    <span class="rank-name">TD</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:85%;background:#f59e0b"></div>
+  </div>
+    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#5</span>
+    <span class="rank-name">NEFT</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:75%;background:#f59e0b"></div>
+  </div>
+    <span class="cov-badge" style="background:#fef3c7;color:#92400e">75%</span>
+  </div>
+  </div>
+  <div class="card">
+    <h2>⚠️ Top 5 Least Covered</h2>
+    
+  <div class="rank-card">
+    <span class="rank-num">#1</span>
+    <span class="rank-name">GL</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div>
+    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#2</span>
+    <span class="rank-name">Transaction</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:0%;background:#ef4444"></div>
+  </div>
+    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#3</span>
+    <span class="rank-name">Administration</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:12%;background:#ef4444"></div>
+  </div>
+    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">12%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#4</span>
+    <span class="rank-name">Customer</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:22%;background:#ef4444"></div>
+  </div>
+    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">22%</span>
+  </div>
+  <div class="rank-card">
+    <span class="rank-num">#5</span>
+    <span class="rank-name">Processes</span>
+    <div class="bar-wrap">
+    <div class="bar" style="width:25%;background:#ef4444"></div>
+  </div>
+    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">25%</span>
+  </div>
+  </div>
+</div>
+  </div>
+  <div class="section" id="sec-trend">
+    <h2 style="margin-bottom:16px">Historical Trend</h2>
+    <div class="card"><p style="color:var(--muted)">No historical data yet. Run again tomorrow to see trends.</p></div>
+  </div>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelector('[data-sec="'+id+'"]').classList.add('active');
+}
+function filter(q){
+  const v=q.toLowerCase();
+  document.querySelectorAll('#mod-table tbody tr').forEach(tr=>{
+    tr.style.display=tr.textContent.toLowerCase().includes(v)?'':'none';
+  });
+}
+window.onload=()=>show('sec-overview');
+</script>
+</body>
+</html>

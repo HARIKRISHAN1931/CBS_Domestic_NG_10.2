@@ -1,0 +1,8 @@
+{
+  "HO":  { "code": "100", "name": "HeadOffice",  "clerk": "CLERK100", "manager": "MGR100", "password": "Abcd@1243" },
+  "B101": { "code": "101", "name": "BranchOne",  "clerk": "CLERK101", "manager": "MGR101", "password": "Abcd@1243" },
+  "B102": { "code": "102", "name": "BranchTwo",  "clerk": "CLERK102", "manager": "MGR102", "password": "Abcd@1243" },
+  "B103": { "code": "103", "name": "BranchThree","clerk": "CLERK103", "manager": "MGR103", "password": "Abcd@1243" },
+  "B104": { "code": "104", "name": "BranchFour", "clerk": "CLERK104", "manager": "MGR104", "password": "Abcd@1243" },
+  "B105": { "code": "105", "name": "BranchFive", "clerk": "CLERK105", "manager": "MGR105", "password": "Abcd@1243" }
+}

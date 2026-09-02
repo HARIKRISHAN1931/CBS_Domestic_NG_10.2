@@ -1,0 +1,17 @@
+node_modules/
+dist/
+allure-results/
+allure-report/
+test-results/
+reports/
+logs/
+.auth/
+*.log
+.env.bdcc.qa
+.env.bdcc.uat
+.env.bdcc.sit
+.env.bdcc.prod
+.env.bccb.qa
+.env.bccb.uat
+.env.bccb.sit
+.env.bccb.prod
