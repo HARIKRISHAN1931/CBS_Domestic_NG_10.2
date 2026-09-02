@@ -3,865 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CBS Business Coverage Dashboard</title>
+<title>CBS Coverage Dashboard v10.2</title>
 <style>
-:root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;
-  --accent:#6366f1;--radius:10px;--shadow:0 1px 4px rgba(0,0,0,.08)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
-h1{font-size:1.5rem;font-weight:700}
-h2{font-size:1rem;font-weight:600;margin-bottom:12px}
-.header{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:#fff;padding:20px 32px;
-  display:flex;align-items:center;gap:16px}
-.header-right{margin-left:auto;text-align:right;font-size:.8rem;opacity:.8;line-height:1.6}
-.nav{background:#1e293b;display:flex;gap:2px;padding:0 32px;overflow-x:auto}
-.nav a{color:#94a3b8;padding:10px 16px;font-size:.85rem;border-bottom:2px solid transparent;
-  cursor:pointer;white-space:nowrap}
-.nav a.active,.nav a:hover{color:#fff;border-color:#6366f1}
-.main{padding:24px 32px;max-width:1600px;margin:0 auto}
-.section{display:none}.section.active{display:block}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
-.stat{text-align:center;padding:16px;background:var(--card);border:1px solid var(--border);
-  border-radius:var(--radius);box-shadow:var(--shadow)}
-.stat .val{font-size:2rem;font-weight:700;line-height:1}
-.stat .lbl{font-size:.72rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
-table{width:100%;border-collapse:collapse;font-size:.84rem}
-th{background:#f1f5f9;padding:9px 12px;text-align:left;font-weight:600;
-  border-bottom:2px solid var(--border);white-space:nowrap}
-td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+body{font-family:Inter,system-ui,sans-serif;background:#f0f4f8;color:#1e293b;font-size:14px}
+h2{font-size:1rem;font-weight:700;margin-bottom:14px;color:#1e293b}
+.hdr{background:linear-gradient(135deg,#0f172a,#1e3a5f 60%,#1e40af);color:#fff;padding:22px 36px;display:flex;align-items:center;gap:20px}
+.ht{font-size:1.6rem;font-weight:800}.hs{font-size:.82rem;opacity:.75;margin-top:3px}
+.hb{margin-left:auto;text-align:right}
+.cp{display:inline-block;padding:6px 22px;border-radius:30px;font-weight:800;font-size:1.1rem}
+.hm{font-size:.75rem;opacity:.65;margin-top:6px;line-height:1.7}
+.nav{background:#1e293b;display:flex;padding:0 36px;overflow-x:auto;border-bottom:1px solid #334155}
+.nav a{color:#94a3b8;padding:12px 18px;font-size:.84rem;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;transition:all .15s}
+.nav a.active,.nav a:hover{color:#fff;border-color:#6366f1;background:rgba(99,102,241,.08)}
+.main{padding:28px 36px;max-width:1700px;margin:0 auto}
+.sec{display:none}.sec.active{display:block}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:18px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.stat{text-align:center;padding:20px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.v{font-size:2.2rem;font-weight:800;line-height:1}
+.l{font-size:.7rem;color:#64748b;margin-top:5px;text-transform:uppercase;letter-spacing:.06em}
+.d{font-size:.75rem;margin-top:4px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th{background:#f1f5f9;padding:10px 12px;text-align:left;font-weight:700;border-bottom:2px solid #e2e8f0;white-space:nowrap;color:#374151}
+td{padding:9px 12px;border-bottom:1px solid #e2e8f0;vertical-align:middle}
 tr:hover td{background:#f8fafc}
-.bar-wrap{background:#e5e7eb;border-radius:4px;height:7px;overflow:hidden;min-width:80px}
-.bar{height:100%;border-radius:4px}
-.cov-badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
-.rank-card{display:flex;align-items:center;gap:12px;padding:10px 0;
-  border-bottom:1px solid var(--border)}
-.rank-card:last-child{border:none}
-.rank-num{font-size:1.4rem;font-weight:700;color:var(--muted);min-width:28px}
-.rank-name{font-weight:600;flex:1}
-.module-name{font-weight:600;color:#1e293b}
-.trend-row{display:flex;align-items:center;gap:12px;padding:8px 0;
-  border-bottom:1px solid var(--border)}
-.trend-row:last-child{border:none}
-.trend-date{font-size:.8rem;color:var(--muted);min-width:90px}
-@media(max-width:900px){.grid-4{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr}}
+.bw{background:#e5e7eb;border-radius:4px;height:8px;overflow:hidden;min-width:70px;display:inline-block;vertical-align:middle;margin-right:6px}
+.b{height:100%;border-radius:4px}
+.cb{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.73rem;font-weight:700;vertical-align:middle}
+.mn{font-weight:700;color:#1e293b}
+.nw{background:#6366f1;color:#fff;font-size:.65rem;padding:1px 6px;border-radius:10px;margin-left:6px;vertical-align:middle;font-weight:700}
+.rc{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #e2e8f0}
+.rc:last-child{border:none}
+.rn{font-size:1.3rem;font-weight:800;color:#64748b;min-width:30px}
+.rnm{font-weight:700;flex:1;min-width:100px}
+.ok{background:#dcfce7;border:1px solid #86efac;border-radius:8px;padding:14px 18px;margin-bottom:18px;font-size:.85rem;color:#166534}
+.tg{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.72rem;font-weight:700;margin:2px}
+.ts{background:#fef9c3;color:#854d0e}.tn{background:#dcfce7;color:#166534}
+.tr{background:#dbeafe;color:#1e40af}.te{background:#f3e8ff;color:#6b21a8}
+ul.nf{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+ul.nf li{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:.75rem;color:#1e40af;font-weight:600}
+input[type=text]{padding:8px 14px;border:1px solid #e2e8f0;border-radius:8px;font-size:.84rem;width:300px;outline:none}
+@media(max-width:1000px){.g4{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.g3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<div class="header">
+<div class="hdr">
   <div>
-    <div style="font-size:.72rem;opacity:.65;margin-bottom:2px;letter-spacing:.08em">CBS DOMESTIC NG 10.2</div>
-    <h1>Business Coverage Dashboard</h1>
-    <div style="font-size:.82rem;margin-top:4px;opacity:.8">Automation Coverage Tracking — All Modules</div>
+    <div style="font-size:.7rem;opacity:.55;letter-spacing:.1em;margin-bottom:4px">CBS DOMESTIC NG 10.2 &nbsp;|&nbsp; BANK: BCCB &nbsp;|&nbsp; ENV: QA</div>
+    <div class="ht">&#128202; Business Coverage Dashboard</div>
+    <div class="hs">Playwright + TypeScript Automation Framework &mdash; All Modules</div>
   </div>
-  <div class="header-right">
-    <div>Generated: 2026-09-01 18:20:06</div>
-    <div>Modules: 20 &nbsp;|&nbsp; Tests: 57</div>
-    <div style="margin-top:6px">
-      <span style="background:#ef4444;color:#fff;padding:3px 14px;
-        border-radius:20px;font-weight:700;font-size:.9rem">
-        49% COVERAGE
-      </span>
-    </div>
+  <div class="hb">
+    <div><span class="cp" style="background:#f59e0b;color:#fff">58% COVERAGE</span></div>
+    <div class="hm">Generated: 2/9/2026, 5:30:00 am<br>Modules: 20 &nbsp;|&nbsp; Screens: 19/38 &nbsp;|&nbsp; Tests: 91<br>Manual TCs: 300 &nbsp;|&nbsp; Grade: AMBER</div>
   </div>
 </div>
 
 <nav class="nav">
-  <a data-sec="sec-overview"  onclick="show('sec-overview')"  class="active">📊 Overview</a>
-  <a data-sec="sec-modules"   onclick="show('sec-modules')">📦 Module Detail</a>
-  <a data-sec="sec-rankings"  onclick="show('sec-rankings')">🏆 Rankings</a>
-  <a data-sec="sec-trend"     onclick="show('sec-trend')">📈 Trend</a>
+  <a data-s="s1" onclick="show('s1')" class="active">&#128202; Overview</a>
+  <a data-s="s2" onclick="show('s2')">&#128230; Module Detail</a>
+  <a data-s="s3" onclick="show('s3')">&#127942; Rankings</a>
+  <a data-s="s4" onclick="show('s4')">&#128200; Trend</a>
+  <a data-s="s5" onclick="show('s5')">&#128203; Customer Update</a>
 </nav>
 
 <div class="main">
-  <div class="section active" id="sec-overview">
-    <h2 style="margin-bottom:16px">Executive Overview</h2>
-    
-<div class="grid-4">
-  <div class="stat"><div class="val" style="color:#ef4444">49%</div><div class="lbl">Overall Coverage</div></div>
-  <div class="stat"><div class="val" style="color:#6366f1">20</div><div class="lbl">Modules</div></div>
-  <div class="stat"><div class="val" style="color:#0ea5e9">17/38</div><div class="lbl">Screens Automated</div></div>
-  <div class="stat"><div class="val" style="color:#8b5cf6">57</div><div class="lbl">Total Tests</div></div>
-</div>
 
-<div class="grid-2">
-  <div class="card">
-    <h2>Coverage Trend</h2>
-    <span style="color:#94a3b8;font-size:.8rem">No trend data yet</span>
-    <div style="margin-top:10px;display:flex;gap:24px;font-size:.85rem">
-      <span>Current: <strong>49%</strong></span>
-      <span>Previous: <strong>N/A%</strong></span>
-      <span>Growth: <span style="color:#64748b">● Stable</span></span>
-    </div>
-  </div>
-  <div class="card">
-    <h2>Test Distribution</h2>
-    <table>
-      <thead><tr><th>Suite</th><th>Count</th><th>Share</th></tr></thead>
-      <tbody>
-        <tr><td>Smoke</td><td><strong>28</strong></td>
-     <td><div class="bar-wrap"><div class="bar" style="width:49%;background:#22c55e"></div></div></td></tr><tr><td>Sanity</td><td><strong>0</strong></td>
-     <td><div class="bar-wrap"><div class="bar" style="width:0%;background:#6366f1"></div></div></td></tr><tr><td>Regression</td><td><strong>26</strong></td>
-     <td><div class="bar-wrap"><div class="bar" style="width:46%;background:#f59e0b"></div></div></td></tr><tr><td>E2E</td><td><strong>3</strong></td>
-     <td><div class="bar-wrap"><div class="bar" style="width:5%;background:#0ea5e9"></div></div></td></tr>
-      </tbody>
-    </table>
-  </div>
+<!-- OVERVIEW -->
+<div class="sec active" id="s1">
+<div class="ok">&#9989; <strong>Coverage improved 49% &rarr; 58% (+9%)</strong> &mdash; Customer module: 22% &rarr; 62% (+40%). 34 new automated tests added. 300 manual TCs documented in Excel workbook.</div>
+<div class="g4">
+  <div class="stat"><div class="v" style="color:#f59e0b">58%</div><div class="l">Overall Coverage</div><div class="d" style="color:#22c55e">&#9650; +9% vs last run</div></div>
+  <div class="stat"><div class="v" style="color:#6366f1">20</div><div class="l">Total Modules</div><div class="d" style="color:#64748b">20 active</div></div>
+  <div class="stat"><div class="v" style="color:#0ea5e9">19/38</div><div class="l">Screens Automated</div><div class="d" style="color:#22c55e">&#9650; +2 screens</div></div>
+  <div class="stat"><div class="v" style="color:#8b5cf6">91</div><div class="l">Automated Tests</div><div class="d" style="color:#22c55e">&#9650; +34 tests</div></div>
 </div>
-
+<div class="g4">
+  <div class="stat"><div class="v" style="color:#22c55e">36</div><div class="l">Smoke Tests</div><div class="d"><span class="tg ts">@smoke</span></div></div>
+  <div class="stat"><div class="v" style="color:#6366f1">10</div><div class="l">Sanity Tests</div><div class="d"><span class="tg tn">@sanity</span></div></div>
+  <div class="stat"><div class="v" style="color:#f59e0b">36</div><div class="l">Regression Tests</div><div class="d"><span class="tg tr">@regression</span></div></div>
+  <div class="stat"><div class="v" style="color:#0ea5e9">5</div><div class="l">E2E Tests</div><div class="d"><span class="tg te">@e2e</span></div></div>
+</div>
+<div class="g3">
+  <div class="stat"><div class="v" style="color:#22c55e">0</div><div class="l">Green Modules (&ge;90%)</div></div>
+  <div class="stat"><div class="v" style="color:#f59e0b">6</div><div class="l">Amber Modules (60-89%)</div></div>
+  <div class="stat"><div class="v" style="color:#ef4444">14</div><div class="l">Red Modules (&lt;60%)</div></div>
+</div>
 <div class="card">
   <h2>Module Coverage Overview</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Module</th><th>Screens</th><th>Screen Cov.</th>
-        <th>Workflows</th><th>Wf Cov.</th>
-        <th>Smoke</th><th>Sanity</th><th>Regression</th><th>E2E</th>
-        <th>Overall</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-    <td class="module-name">Administration</td>
-    <td>1/14</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:7%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">7%</span></td>
-    <td>1/21</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:5%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">5%</span></td>
-    <td>4</td>
-    <td>0</td>
-    <td>6</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:12%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">12%</span></td>
-  </tr><tr>
-    <td class="module-name">CASA</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>1/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>4</td>
-    <td>1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-  </tr><tr>
-    <td class="module-name">CCOD</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">Clearing</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">Customer</td>
-    <td>1/6</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:17%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">17%</span></td>
-    <td>1/9</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:11%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">11%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>6</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:22%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">22%</span></td>
-  </tr><tr>
-    <td class="module-name">FixedAssets</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">GL</td>
-    <td>0/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-  </tr><tr>
-    <td class="module-name">GoldLoan</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">KCC</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">Loans</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>1/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>4</td>
-    <td>1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-  </tr><tr>
-    <td class="module-name">Locker</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:60%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
-  </tr><tr>
-    <td class="module-name">NACH</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:60%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
-  </tr><tr>
-    <td class="module-name">NEFT</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>1/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:75%;background:#f59e0b"></div>
-  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">75%</span></td>
-  </tr><tr>
-    <td class="module-name">Pigmy</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">Processes</td>
-    <td>1/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    <td>0/3</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:25%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">25%</span></td>
-  </tr><tr>
-    <td class="module-name">Reports</td>
-    <td>0/0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>0/0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:30%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">30%</span></td>
-  </tr><tr>
-    <td class="module-name">RTGS</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>1/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>2</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-  </tr><tr>
-    <td class="module-name">Shares</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-  </tr><tr>
-    <td class="module-name">TD</td>
-    <td>1/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:100%;background:#22c55e"></div>
-  </div> <span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-    <td>1/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:50%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    <td>2</td>
-    <td>0</td>
-    <td>4</td>
-    <td>1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div> <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-  </tr><tr>
-    <td class="module-name">Transaction</td>
-    <td>0/1</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>0/2</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td><div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div> <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-  </tr>
-    </tbody>
-  </table>
+  <table><thead><tr><th>Module</th><th>Screens</th><th>Screen Cov.</th><th>Workflows</th><th>Wf Cov.</th><th>Smoke</th><th>Sanity</th><th>Regression</th><th>E2E</th><th>Overall</th></tr></thead>
+  <tbody><tr><td class=mn>Administration</td><td>1/14</td><td><div class=bw><div class=b style="width:7%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">7%</span></td><td>1/21</td><td><div class=bw><div class=b style="width:5%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">5%</span></td><td>4</td><td>0</td><td>6</td><td>0</td><td><div class=bw><div class=b style="width:12%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">12%</span></td></tr><tr><td class=mn>CASA</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>1/2</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td>2</td><td>0</td><td>4</td><td>1</td><td><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>CCOD</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Clearing</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Customer<span class=nw>NEW</span></td><td>4/6</td><td><div class=bw><div class=b style="width:67%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">67%</span></td><td>4/9</td><td><div class=bw><div class=b style="width:44%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">44%</span></td><td>9</td><td>10</td><td>16</td><td>2</td><td><div class=bw><div class=b style="width:62%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">62%</span></td></tr><tr><td class=mn>FixedAssets</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>GL</td><td>0/1</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td></tr><tr><td class=mn>GoldLoan</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>KCC</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Loans</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>1/2</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td>2</td><td>0</td><td>4</td><td>1</td><td><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>Locker</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>2</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:60%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">60%</span></td></tr><tr><td class=mn>NACH</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>2</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:60%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">60%</span></td></tr><tr><td class=mn>NEFT</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>1/2</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td>2</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:75%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">75%</span></td></tr><tr><td class=mn>Pigmy</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Processes</td><td>1/2</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td>0/3</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:25%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">25%</span></td></tr><tr><td class=mn>Reports</td><td>0/0</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>0/0</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:30%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">30%</span></td></tr><tr><td class=mn>RTGS</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>1/2</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td>2</td><td>0</td><td>2</td><td>0</td><td><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>Shares</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>1</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>TD</td><td>1/1</td><td><div class=bw><div class=b style="width:100%;background:#22c55e"></div></div><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td>1/2</td><td><div class=bw><div class=b style="width:50%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td>2</td><td>0</td><td>4</td><td>1</td><td><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>Transaction</td><td>0/1</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>0/2</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td></tr></tbody></table>
 </div>
-  </div>
-  <div class="section" id="sec-modules">
-    <h2 style="margin-bottom:16px">Module Detail</h2>
-    <div class="card">
-<input type="text" placeholder="Filter modules…" oninput="filter(this.value)"
-  style="padding:7px 14px;border:1px solid var(--border);border-radius:6px;
-  margin-bottom:16px;width:280px;font-size:.85rem">
-<table id="mod-table">
-  <thead>
-    <tr>
-      <th>Module</th><th>Pages</th><th>Workflows</th><th>Validators</th>
-      <th>Repos</th><th>Smoke</th><th>Sanity</th><th>Regression</th><th>E2E</th>
-      <th>Screen%</th><th>Workflow%</th><th>Overall%</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="module-name">Administration</td>
-      <td>14</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>0</td>
-      <td>6</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">7%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">5%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">12%</span></td>
-    </tr><tr>
-      <td class="module-name">CASA</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>4</td>
-      <td>1</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-    </tr><tr>
-      <td class="module-name">CCOD</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">Clearing</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">Customer</td>
-      <td>6</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>6</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">17%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">11%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">22%</span></td>
-    </tr><tr>
-      <td class="module-name">FixedAssets</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">GL</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    </tr><tr>
-      <td class="module-name">GoldLoan</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">KCC</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">Loans</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>4</td>
-      <td>1</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-    </tr><tr>
-      <td class="module-name">Locker</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
-    </tr><tr>
-      <td class="module-name">NACH</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">60%</span></td>
-    </tr><tr>
-      <td class="module-name">NEFT</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">75%</span></td>
-    </tr><tr>
-      <td class="module-name">Pigmy</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">Processes</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">25%</span></td>
-    </tr><tr>
-      <td class="module-name">Reports</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">30%</span></td>
-    </tr><tr>
-      <td class="module-name">RTGS</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-    </tr><tr>
-      <td class="module-name">Shares</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-    </tr><tr>
-      <td class="module-name">TD</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>4</td>
-      <td>1</td>
-      <td><span class="cov-badge" style="background:#dcfce7;color:#166534">100%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">50%</span></td>
-      <td><span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span></td>
-    </tr><tr>
-      <td class="module-name">Transaction</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-      <td><span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span></td>
-    </tr>
-  </tbody>
-</table></div>
-  </div>
-  <div class="section" id="sec-rankings">
-    <h2 style="margin-bottom:16px">Module Rankings</h2>
-    
-<div class="grid-2">
-  <div class="card">
-    <h2>🏆 Top 5 Best Covered</h2>
-    
-  <div class="rank-card">
-    <span class="rank-num">#1</span>
-    <span class="rank-name">CASA</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div>
-    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#2</span>
-    <span class="rank-name">Loans</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div>
-    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#3</span>
-    <span class="rank-name">RTGS</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div>
-    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#4</span>
-    <span class="rank-name">TD</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:85%;background:#f59e0b"></div>
-  </div>
-    <span class="cov-badge" style="background:#fef3c7;color:#92400e">85%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#5</span>
-    <span class="rank-name">NEFT</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:75%;background:#f59e0b"></div>
-  </div>
-    <span class="cov-badge" style="background:#fef3c7;color:#92400e">75%</span>
-  </div>
-  </div>
-  <div class="card">
-    <h2>⚠️ Top 5 Least Covered</h2>
-    
-  <div class="rank-card">
-    <span class="rank-num">#1</span>
-    <span class="rank-name">GL</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div>
-    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#2</span>
-    <span class="rank-name">Transaction</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:0%;background:#ef4444"></div>
-  </div>
-    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">0%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#3</span>
-    <span class="rank-name">Administration</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:12%;background:#ef4444"></div>
-  </div>
-    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">12%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#4</span>
-    <span class="rank-name">Customer</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:22%;background:#ef4444"></div>
-  </div>
-    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">22%</span>
-  </div>
-  <div class="rank-card">
-    <span class="rank-num">#5</span>
-    <span class="rank-name">Processes</span>
-    <div class="bar-wrap">
-    <div class="bar" style="width:25%;background:#ef4444"></div>
-  </div>
-    <span class="cov-badge" style="background:#fee2e2;color:#991b1b">25%</span>
-  </div>
-  </div>
-</div>
-  </div>
-  <div class="section" id="sec-trend">
-    <h2 style="margin-bottom:16px">Historical Trend</h2>
-    <div class="card"><p style="color:var(--muted)">No historical data yet. Run again tomorrow to see trends.</p></div>
-  </div>
 </div>
 
+<!-- MODULE DETAIL -->
+<div class="sec" id="s2">
+<h2 style="margin-bottom:16px">Module Detail</h2>
+<div class="card">
+<input type="text" placeholder="Filter modules..." oninput="flt(this.value)" style="margin-bottom:16px">
+<table id="mt"><thead><tr><th>Module</th><th>Pages</th><th>Workflows</th><th>Validators</th><th>Repos</th><th>Smoke</th><th>Sanity</th><th>Regression</th><th>E2E</th><th>Screen%</th><th>Workflow%</th><th>Overall%</th></tr></thead>
+<tbody><tr><td class=mn>Administration</td><td>14</td><td>1</td><td>1</td><td>1</td><td>4</td><td>0</td><td>6</td><td>0</td><td><span class=cb style="background:#fee2e2;color:#991b1b">7%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">5%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">12%</span></td></tr><tr><td class=mn>CASA</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>4</td><td>1</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>CCOD</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Clearing</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Customer</td><td>6</td><td>4</td><td>1</td><td>1</td><td>9</td><td>10</td><td>16</td><td>2</td><td><span class=cb style="background:#fef3c7;color:#92400e">67%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">44%</span></td><td><span class=cb style="background:#fef3c7;color:#92400e">62%</span></td></tr><tr><td class=mn>FixedAssets</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>GL</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td></tr><tr><td class=mn>GoldLoan</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>KCC</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Loans</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>4</td><td>1</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>Locker</td><td>1</td><td>0</td><td>1</td><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">60%</span></td></tr><tr><td class=mn>NACH</td><td>1</td><td>0</td><td>1</td><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">60%</span></td></tr><tr><td class=mn>NEFT</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td><span class=cb style="background:#fef3c7;color:#92400e">75%</span></td></tr><tr><td class=mn>Pigmy</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>Processes</td><td>2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">25%</span></td></tr><tr><td class=mn>Reports</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">30%</span></td></tr><tr><td class=mn>RTGS</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>2</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>Shares</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td></tr><tr><td class=mn>TD</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>0</td><td>4</td><td>1</td><td><span class=cb style="background:#dcfce7;color:#166534">100%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">50%</span></td><td><span class=cb style="background:#fef3c7;color:#92400e">85%</span></td></tr><tr><td class=mn>Transaction</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td><td><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></td></tr></tbody></table>
+</div>
+</div>
+
+<!-- RANKINGS -->
+<div class="sec" id="s3">
+<h2 style="margin-bottom:16px">Module Rankings</h2>
+<div class="g2">
+  <div class="card"><h2>&#127942; Top 5 Best Covered</h2><div class=rc><span class=rn>#1</span><span class=rnm>CASA</span><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></div><div class=rc><span class=rn>#2</span><span class=rnm>Loans</span><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></div><div class=rc><span class=rn>#3</span><span class=rnm>RTGS</span><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></div><div class=rc><span class=rn>#4</span><span class=rnm>TD</span><div class=bw><div class=b style="width:85%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">85%</span></div><div class=rc><span class=rn>#5</span><span class=rnm>NEFT</span><div class=bw><div class=b style="width:75%;background:#f59e0b"></div></div><span class=cb style="background:#fef3c7;color:#92400e">75%</span></div></div>
+  <div class="card"><h2>&#9888;&#65039; Top 5 Least Covered</h2><div class=rc><span class=rn>#1</span><span class=rnm>Transaction</span><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></div><div class=rc><span class=rn>#2</span><span class=rnm>GL</span><div class=bw><div class=b style="width:0%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">0%</span></div><div class=rc><span class=rn>#3</span><span class=rnm>Administration</span><div class=bw><div class=b style="width:12%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">12%</span></div><div class=rc><span class=rn>#4</span><span class=rnm>Processes</span><div class=bw><div class=b style="width:25%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">25%</span></div><div class=rc><span class=rn>#5</span><span class=rnm>Reports</span><div class=bw><div class=b style="width:30%;background:#ef4444"></div></div><span class=cb style="background:#fee2e2;color:#991b1b">30%</span></div></div>
+</div>
+</div>
+
+<!-- TREND -->
+<div class="sec" id="s4">
+<h2 style="margin-bottom:16px">Historical Trend</h2>
+<div class="g3">
+  <div class="stat"><div class="v" style="color:#6366f1">58%</div><div class="l">Current Coverage</div></div>
+  <div class="stat"><div class="v" style="color:#64748b">49%</div><div class="l">Previous Coverage</div></div>
+  <div class="stat"><div class="v" style="color:#22c55e">+9%</div><div class="l">Growth</div><div class="d" style="color:#22c55e">&#9650; Improving</div></div>
+</div>
+<div class="card"><h2>Run History</h2>
+<table><thead><tr><th>Date</th><th>Tests</th><th>Coverage</th></tr></thead><tbody><tr><td>2026-09-01</td><td>57</td><td><div class=bw><div class=b style="width:49%;background:#f59e0b"></div></div>49%</td></tr><tr><td>2026-09-02</td><td>91</td><td><div class=bw><div class=b style="width:58%;background:#f59e0b"></div></div>58%</td></tr></tbody></table>
+</div>
+</div>
+
+<!-- CUSTOMER UPDATE -->
+<div class="sec" id="s5">
+<h2 style="margin-bottom:16px">&#128203; Customer Module Update</h2>
+<div class="ok">&#9989; Customer module coverage improved from <strong>22%</strong> to <strong>62%</strong> (+40%). Commit: <code>92add64</code></div>
+<div class="g4">
+  <div class="stat"><div class="v" style="color:#22c55e">62%</div><div class="l">New Coverage</div><div class="d" style="color:#22c55e">&#9650; +40% vs before</div></div>
+  <div class="stat"><div class="v" style="color:#6366f1">300</div><div class="l">Manual Test Cases</div><div class="d">12-sheet Excel workbook</div></div>
+  <div class="stat"><div class="v" style="color:#f59e0b">undefined</div><div class="l">Automation Candidates</div><div class="d">of 300 TCs</div></div>
+  <div class="stat"><div class="v" style="color:#0ea5e9">37</div><div class="l">Automated Tests</div><div class="d"><span class="tg ts">@smoke</span><span class="tg tn">@sanity</span><span class="tg tr">@regression</span></div></div>
+</div>
+<div class="g2">
+  <div class="card"><h2>Test Suites Added</h2>
+    <table><thead><tr><th>Spec File</th><th>Suite</th><th>Tests</th></tr></thead><tbody>
+    <tr><td>customer-list.spec.ts</td><td><span class="tg ts">@smoke</span></td><td>8</td></tr>
+    <tr><td>customer-create.spec.ts</td><td><span class="tg ts">@smoke</span></td><td>1</td></tr>
+    <tr><td>customer-validation.spec.ts</td><td><span class="tg tn">@sanity</span></td><td>10</td></tr>
+    <tr><td>customer-regression.spec.ts</td><td><span class="tg tr">@regression</span></td><td>18</td></tr>
+    </tbody></table>
+  </div>
+  <div class="card"><h2>New Files Added</h2>
+    <ul class="nf"><li>CustomerListPage.ts</li><li>customerFixtures.ts</li><li>customer-list.spec.ts</li><li>customer-validation.spec.ts</li><li>CascadeHelper.ts</li><li>DateHelper.ts</li><li>CustomerDataGenerator.ts</li><li>customer-test-data.json</li><li>Customer_TestCases.xlsx</li></ul>
+    <div style="margin-top:14px;font-size:.82rem;color:#64748b">Excel workbook: <strong>docs/test-cases/Customer_TestCases.xlsx</strong></div>
+  </div>
+</div>
+<div class="card"><h2>Manual TC Coverage Breakdown</h2>
+<table><thead><tr><th>Sheet</th><th>TC Range</th><th>Count</th><th>Type</th></tr></thead><tbody>
+<tr><td>List View</td><td>TC-001 to TC-036</td><td>36</td><td>Functional / UI</td></tr>
+<tr><td>Basic Details</td><td>TC-037 to TC-065</td><td>29</td><td>Validation / Boundary</td></tr>
+<tr><td>Contact Details</td><td>TC-066 to TC-088</td><td>23</td><td>Functional / Cascade</td></tr>
+<tr><td>Additional Details</td><td>TC-089 to TC-107</td><td>19</td><td>Functional / Conditional</td></tr>
+<tr><td>Document Details</td><td>TC-108 to TC-137</td><td>30</td><td>Validation / Negative</td></tr>
+<tr><td>Maker-Checker Workflow</td><td>TC-138 to TC-160</td><td>23</td><td>Functional / Role</td></tr>
+<tr><td>Roles &amp; Permissions</td><td>TC-161 to TC-167</td><td>7</td><td>Role-Permission</td></tr>
+<tr><td>UI / Boundary / E2E</td><td>TC-168 to TC-300</td><td>133</td><td>UI / Boundary / E2E</td></tr>
+<tr style="font-weight:700;background:#f1f5f9"><td>TOTAL</td><td>TC-001 to TC-300</td><td>300</td><td>All Types</td></tr>
+</tbody></table>
+</div>
+</div>
+
+</div>
 <script>
 function show(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  document.querySelector('[data-sec="'+id+'"]').classList.add('active');
+  document.querySelector('[data-s="'+id+'"]').classList.add('active');
 }
-function filter(q){
+function flt(q){
   const v=q.toLowerCase();
-  document.querySelectorAll('#mod-table tbody tr').forEach(tr=>{
-    tr.style.display=tr.textContent.toLowerCase().includes(v)?'':'none';
+  document.querySelectorAll('#mt tbody tr').forEach(r=>{
+    r.style.display=r.textContent.toLowerCase().includes(v)?'':'none';
   });
 }
-window.onload=()=>show('sec-overview');
+window.onload=()=>show('s1');
 </script>
 </body>
 </html>
